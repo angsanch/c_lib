@@ -7,9 +7,9 @@
 
 #include "my.h"
 
-int my_intlen(int n)
+int my_intlen(int nb)
 {
-    return (my_intlen_base(n, 10));
+    return (my_intlen_base(nb, 10));
 }
 
 int my_getnbr(char const *str)
