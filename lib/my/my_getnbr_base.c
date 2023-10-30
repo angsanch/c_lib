@@ -19,6 +19,24 @@ static size_t my_strchr_index(const char *str, char c)
     return (-1);
 }
 
+int my_intlen_base(int nb, int base_len)
+{
+    unsigned int n = nb;
+    int len = 0;
+
+    if (nb == 0)
+        return (1);
+    if (nb < 0){
+        len ++;
+        n = -nb;
+    }
+    while (n){
+        n /= base_len;
+        len ++;
+    }
+    return (len);
+}
+
 int my_getnbr_base(char const *str, char const *base)
 {
     int result = 0;

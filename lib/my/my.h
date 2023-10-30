@@ -16,7 +16,9 @@ char *convert_base(char const *nbr,
 int my_compute_power_rec(int nb, int p);
 int my_compute_square_root(int nb);
 int my_find_prime_sup(int nb);
+int my_intlen_base(int n, int base_len);
 int my_getnbr_base(char const *str, char const *base);
+int my_intlen(int n);
 int my_getnbr(char const *str);
 void my_isneg(int n);
 int my_is_prime(int nb);

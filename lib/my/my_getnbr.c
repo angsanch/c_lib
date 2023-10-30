@@ -7,6 +7,11 @@
 
 #include "my.h"
 
+int my_intlen(int n)
+{
+    return (my_intlen_base(n, 10));
+}
+
 int my_getnbr(char const *str)
 {
     long result = 0;
