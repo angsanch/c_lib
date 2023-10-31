@@ -46,7 +46,8 @@ C_FILES = my_strupcase.c \
  			my_putnbr_base.c \
  			my_compute_power_rec.c\
 			my_memcmp.c \
-			my_memset.c
+			my_memset.c \
+			my_strchr.c
 
 O_FILES = $(C_FILES:.c=.o)
 

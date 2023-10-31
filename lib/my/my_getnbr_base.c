@@ -7,18 +7,6 @@
 
 #include "my.h"
 
-static size_t my_strchr_index(const char *str, char c)
-{
-    size_t i = 0;
-
-    while (str[i] != 0){
-        if (str[i] == c)
-            return (i);
-        i ++;
-    }
-    return (-1);
-}
-
 int my_intlen_base(int nb, int base_len)
 {
     unsigned int n = nb;
@@ -51,7 +39,7 @@ int my_getnbr_base(char const *str, char const *base)
     }
     i = my_strlen(str) - 1;
     while (i + 1 > 0){
-        result += my_strchr_index(base, str[i]) * power;
+        result += power * my_strchr_index(base, str[i]);
         power *= base_len;
         i --;
     }
