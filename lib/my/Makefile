@@ -49,7 +49,13 @@ C_FILES = src/my_strupcase.c \
 			src/my_memset.c \
 			src/my_strchr.c \
 			src/my_strrchr.c \
-			src/my_memcpy.c
+			src/my_memcpy.c \
+			src/printf/genericf.c \
+			src/printf/my_printf.c \
+			src/printf/parameter_utils.c \
+			src/printf/utils1.c \
+			src/printf/utils2.c \
+			src/printf/utils3.c
 
 O_FILES = $(C_FILES:.c=.o)
 

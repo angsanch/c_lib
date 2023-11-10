@@ -64,5 +64,6 @@ char **my_str_to_word_array(char const *str);
 void my_to_upper(char *chr);
 char *my_strupcase(char *str);
 void my_swap(int *a, int *b);
+int my_printf(char const *format, ...);
 
 #endif
