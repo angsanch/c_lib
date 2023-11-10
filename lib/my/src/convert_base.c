@@ -5,7 +5,7 @@
 ** Change the base of a number
 */
 
-#include "my.h"
+#include "../include/my.h"
 
 static size_t int_len_base(int nbr, int base)
 {

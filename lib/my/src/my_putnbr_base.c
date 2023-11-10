@@ -5,7 +5,7 @@
 ** Print numbers in different bases
 */
 
-#include "my.h"
+#include "../include/my.h"
 
 static unsigned int get_divisor(unsigned int nbr, unsigned int base)
 {

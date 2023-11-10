@@ -5,7 +5,7 @@
 ** Ints to terminal
 */
 
-#include "my.h"
+#include "../include/my.h"
 
 void my_put_nbr(int nb)
 {

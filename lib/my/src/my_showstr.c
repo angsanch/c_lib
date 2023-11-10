@@ -5,7 +5,7 @@
 ** Print unprintable as hexadecimal
 */
 
-#include "my.h"
+#include "../include/my.h"
 
 static void print_hex(char chr)
 {

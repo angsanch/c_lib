@@ -5,7 +5,7 @@
 ** Show parsed memory
 */
 
-#include "my.h"
+#include "../include/my.h"
 
 static char *hexchar(char *c)
 {

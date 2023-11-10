@@ -5,7 +5,7 @@
 ** Strings to numbers
 */
 
-#include "my.h"
+#include "../include/my.h"
 
 int my_intlen(int nb)
 {
