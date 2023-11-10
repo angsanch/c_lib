@@ -92,6 +92,7 @@ static parameter **parse_format(char const *format)
             return (free_params(params));
         p ++;
     }
+    params[n] = NULL;
     return (params);
 }
 
