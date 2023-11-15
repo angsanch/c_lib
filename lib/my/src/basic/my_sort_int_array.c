@@ -5,7 +5,7 @@
 ** Sort some ints
 */
 
-#include "../include/my.h"
+#include "../../include/my.h"
 
 static int buble(int *array, size_t size)
 {

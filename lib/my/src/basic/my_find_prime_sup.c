@@ -5,7 +5,7 @@
 ** Next prime
 */
 
-#include "../include/my.h"
+#include "../../include/my.h"
 
 int my_find_prime_sup(int nb)
 {

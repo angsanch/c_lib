@@ -5,7 +5,7 @@
 ** Capitalize texts
 */
 
-#include "../include/my.h"
+#include "../../include/my.h"
 
 char *my_strcapitalize(char *str)
 {
