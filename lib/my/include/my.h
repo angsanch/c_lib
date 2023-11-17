@@ -11,6 +11,17 @@
     #include <stdlib.h>
     #include <unistd.h>
 
+typedef struct linked_list_element{
+    void *content;
+    struct linked_list_element *next;
+} l_elem;
+
+typedef struct linked_list_container{
+    size_t len;
+    l_elem *first;
+    void(*del)(void *);
+} l_list;
+
 char *convert_base(char const *nbr,
     char const *base_from, char const *base_to);
 int my_compute_power_rec(int nb, int p);
@@ -64,6 +75,13 @@ char **my_str_to_word_array(char const *str);
 void my_to_upper(char *chr);
 char *my_strupcase(char *str);
 void my_swap(int *a, int *b);
+
 int my_printf(char const *format, ...);
+
+void list_destroy(l_list *l);
+l_list *list_create(void(*del)(void *));
+size_t list_len(l_list *l);
+int list_append(l_list *l, void *content);
+void **list_export(l_list *l);
 
 #endif
