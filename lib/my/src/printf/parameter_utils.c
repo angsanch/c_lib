@@ -16,7 +16,8 @@ static char flags_called(char const *format, parameter *p, int i)
     while (index != -1){
         p->flags[index] = 1;
         index = my_strchr_index("-+ #0", format[i]);
-        i++;
+        if (index >= 0)
+            i++;
     }
     return (i);
 }

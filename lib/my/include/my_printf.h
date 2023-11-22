@@ -29,9 +29,6 @@ parameter *parse_parameter(char const *format, int *i);
 void destroy_param(parameter *p);
 char *my_lluitoa_base(unsigned long long int nb, char const *base,
     int min_len);
-int my_putnchrp(char c, int n, void(*put)(char));
-size_t my_putstrp(char *str, void(*put)(char));
-int print_parsed_nb(parameter *param, char *sign, char *num, void(*put)(char));
 
 char *signed_decimal_integer(parameter *param, va_list *ap, int n);
 char *unsigned_decimal_integer(parameter *param, va_list *ap, int n);
