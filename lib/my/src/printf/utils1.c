@@ -96,7 +96,7 @@ char *my_lluitoa_base(unsigned long long int nb, char const *base,
     return (result);
 }
 
-static char *prepare_parts(parameter *param, char *sign, char *number)
+char *prepare_parts(parameter *param, char *sign, char *number)
 {
     size_t len = my_strlen(sign) + my_strlen(number);
     size_t min_len = param->width;

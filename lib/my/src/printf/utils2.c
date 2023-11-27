@@ -10,7 +10,6 @@
 #include <stddef.h>
 #include <stdarg.h>
 #include <stdlib.h>
-#include "../../include/data_parameter.h"
 #include "../../include/my_printf.h"
 #include "../../include/my.h"
 #include <stdio.h>
@@ -57,105 +56,104 @@ static char *get_string(parameter *param, va_list *ap)
     return (str);
 }
 
-int length_exporter(parameter *param, va_list *ap, void(*put)(char),
-    int *n)
+char *length_exporter(parameter *param, va_list *ap, int n)
 {
-    (void)put;
     if (param->length == 0)
-        *(va_arg(*ap, int *)) = *n;
+        *(va_arg(*ap, int *)) = n;
     if (param->length == 1)
-        *(va_arg(*ap, signed char *)) = *n;
+        *(va_arg(*ap, signed char *)) = n;
     if (param->length == 2)
-        *(va_arg(*ap, short int *)) = *n;
+        *(va_arg(*ap, short int *)) = n;
     if (param->length == 3)
-        *(va_arg(*ap, long int *)) = *n;
+        *(va_arg(*ap, long int *)) = n;
     if (param->length == 4)
-        *(va_arg(*ap, long long int *)) = *n;
+        *(va_arg(*ap, long long int *)) = n;
     if (param->length == 5)
-        *(va_arg(*ap, intmax_t *)) = *n;
+        *(va_arg(*ap, intmax_t *)) = n;
     if (param->length == 6)
-        *(va_arg(*ap, size_t *)) = *n;
+        *(va_arg(*ap, size_t *)) = n;
     if (param->length == 7)
-        *(va_arg(*ap, ptrdiff_t *)) = *n;
-    return (0);
+        *(va_arg(*ap, ptrdiff_t *)) = n;
+    return (my_strdup(""));
 }
 
-int character_print(parameter *param, va_list *ap, void(*put)(char),
-    int *n)
+char *character_print(parameter *param, va_list *ap, int n)
 {
-    char c;
-    int printed = 1;
+    size_t len = 1;
+    char *result;
 
     (void)n;
-    if (param->length == 3)
-        c = (char)va_arg(*ap, wint_t);
-    else
-        c = (char)va_arg(*ap, int);
+    if (param->width > 1)
+        len = param->width;
+    result = malloc(sizeof(char) * (len + 1));
+    if (result == NULL)
+        return (NULL);
     if (param->flags[0]){
-        (*put)(c);
-        printed += my_putnchrp(' ', param->width - 1, put);
+        result[0] = (char)va_arg(*ap, int);
+        my_memset(result + 1, ' ', len - 1);
     } else {
-        (*put)(c);
-        printed += my_putnchrp(' ', param->width - 1, put);
+        my_memset(result, ' ', len - 1);
+        result[len - 1] = (char)va_arg(*ap, int);
     }
-    return (printed);
+    result[len] = '\0';
+    return (result);
 }
 
-int string_print(parameter *param, va_list *ap, void(*put)(char),
-    int *n)
+static char *complex_string(parameter *param, char *str, int len)
 {
-    size_t i = 0;
+    char *result = malloc(sizeof(char) * (param->width + 1));
+
+    if (result == NULL)
+        return (NULL);
+    if (param->flags[0]){
+        my_strcpy(result, str);
+        my_memset(result + len, ' ', param->width - len);
+        result[param->width] = 0;
+    } else {
+        my_memset(result, ' ', param->width - len);
+        my_strcpy(result + param->width - len, str);
+    }
+    return (result);
+}
+
+char *string_print(parameter *param, va_list *ap, int n)
+{
+    int len;
     char *str;
+    char *result;
 
     (void)n;
     str = get_string(param, ap);
     if (str == NULL)
-        return (0);
-    if (param->flags[0])
-        i += my_putstrp(str, put);
-    i += my_putnchrp(' ', param->width - my_strlen(str), put);
-    if (!param->flags[0])
-        i += my_putstrp(str, put);
-    free(str);
-    return (i);
-}
-
-int print_parsed_nb(parameter *param, char *sign, char *num, void(*put)(char))
-{
-    size_t printed;
-
-    printed = my_strlen(num) + my_strlen(sign);
-    if (param->flags[0]){
-        my_putstrp(sign, put);
-        my_putstrp(num, put);
-        printed = my_putnchrp(' ', param->width - printed, put);
-    } else {
-        if (param->flags[4]){
-            my_putstrp(sign, put);
-            printed = my_putnchrp('0', param->width - printed, put);
-        } else {
-            printed = my_putnchrp(' ', param->width - printed, put);
-            my_putstrp(sign, put);
-        }
-        my_putstrp(num, put);
+        return (NULL);
+    len = my_strlen(str);
+    if (param->precision < len){
+        str[param->precision] = '\0';
+        len = param->precision;
     }
-    return (printed + my_strlen(num) + my_strlen(sign));
+    if (len >= param->width)
+        return (str);
+    result = complex_string(param, str, len);
+    free(str);
+    return (result);
 }
 
-int pointer_print(parameter *param, va_list *ap, void(*put)(char),
-    int *n)
+char *pointer_print(parameter *param, va_list *ap, int n)
 {
     unsigned long long int ptr = (unsigned long long int)va_arg(*ap, void *);
-    char *text;
-    char *sign = "+0x";
+    char *parsed_number;
+    char *result;
+    char sign[] = "+0x";
 
     (void)n;
-    text = my_lluitoa_base(ptr, "0123456789abcdef", param->precision);
-    if (text == NULL)
+    parsed_number = my_lluitoa_base(ptr, "0123456789abcdef", param->precision);
+    if (parsed_number == NULL)
         return (0);
-    if (!param->flags[1])
-        sign ++;
-    ptr = print_parsed_nb(param, sign, text, put);
-    free(text);
-    return (ptr);
+    if (!param->flags[1]){
+        if (param->flags[2])
+            sign[0] = ' ';
+    }
+    result = prepare_parts(param, sign, parsed_number);
+    free(parsed_number);
+    return (result);
 }
