@@ -78,6 +78,8 @@ char *my_strupcase(char *str);
 void my_swap(int *a, int *b);
 
 int my_printf(char const *format, ...);
+int my_sprintf(char *str, char const *format, ...);
+int my_dprintf(int fd, char const *format, ...);
 
 l_list *list_destroy(l_list *l);
 l_list *list_create(void(*del)(void *));
