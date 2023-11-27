@@ -21,7 +21,8 @@ char *(*param_str[])(parameter *param, va_list *ap, int n) = {
     &signed_decimal_integer, &signed_decimal_integer,
     &signed_decimal_integer, &signed_decimal_integer,
     &character_print, &string_print,
-    &pointer_print, &print_percentage
+    &pointer_print, &length_exporter,
+    &print_percentage
 };
 
 static void list_destroy_param(void *p)

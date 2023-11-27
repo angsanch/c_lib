@@ -55,7 +55,6 @@ C_FILES = src/basic/my_strupcase.c \
 			src/printf/parameter_utils.c \
 			src/printf/utils1.c \
 			src/printf/utils2.c \
-			src/printf/utils3.c \
 			src/linked_lists/basic_list.c \
 			src/linked_lists/simple_operations.c
 

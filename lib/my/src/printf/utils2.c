@@ -157,3 +157,11 @@ char *pointer_print(parameter *param, va_list *ap, int n)
     free(parsed_number);
     return (result);
 }
+
+char *print_percentage(parameter *param, va_list *ap, int n)
+{
+    (void)param;
+    (void)ap;
+    (void)n;
+    return (my_strdup("%"));
+}
