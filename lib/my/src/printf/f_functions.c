@@ -14,7 +14,7 @@ static size_t my_dputstr(int fd, char const *str)
     size_t i = 0;
 
     while (str[i]){
-        write(fd, str + 1, 1);
+        write(fd, str + i, 1);
         i ++;
     }
     return (i);
