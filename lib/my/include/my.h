@@ -79,6 +79,8 @@ void **list_export(l_list *l);
 void list_pop_first(l_list *l);
 void list_iter(l_list *l, void(*func)(void *));
 void list_iter_data(l_list *l, void *data, void(*func)(void *, void *));
+void *list_first_fulfil(l_list *l, int(*func)(void *));
+size_t list_total_fulfil(l_list *l, int(*func)(void *));
 
 dn_sound *search_sound(dn_scene *scene, size_t id);
 dn_texture *search_texture(dn_scene *scene, size_t id);

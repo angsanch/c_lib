@@ -46,3 +46,28 @@ void list_iter_data(l_list *l, void *data, void(*func)(void *, void *))
         e = e->next;
     }
 }
+
+void *list_first_fulfil(l_list *l, int(*func)(void *))
+{
+    l_elem *e = l->first;
+
+    while (e != NULL){
+        if (func(e))
+            return (e->content);
+        e = e->next;
+    }
+    return (NULL);
+}
+
+size_t list_total_fulfil(l_list *l, int(*func)(void *))
+{
+    l_elem *e = l->first;
+    size_t count = 0;
+
+    while (e != NULL){
+        if (func(e))
+            count ++;
+        e = e->next;
+    }
+    return (count);
+}
