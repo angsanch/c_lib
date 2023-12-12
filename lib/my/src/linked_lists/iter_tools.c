@@ -27,17 +27,7 @@ void **list_export(l_list *l)
     return (export);
 }
 
-void list_iter(l_list *l, void(*func)(void *))
-{
-    l_elem *e = l->first;
-
-    while (e != NULL){
-        (*func)(e->content);
-        e = e->next;
-    }
-}
-
-void list_iter_data(l_list *l, void *data, void(*func)(void *, void *))
+void list_iter(l_list *l, void(*func)(void *, void *), void *data)
 {
     l_elem *e = l->first;
 
@@ -47,19 +37,21 @@ void list_iter_data(l_list *l, void *data, void(*func)(void *, void *))
     }
 }
 
-void *list_first_fulfil(l_list *l, int(*func)(void *))
+ssize_t list_first_fulfil(l_list *l, int(*func)(void *))
 {
     l_elem *e = l->first;
+    size_t i = 0;
 
     while (e != NULL){
         if (func(e))
-            return (e->content);
+            return (i);
         e = e->next;
+        i ++;
     }
-    return (NULL);
+    return (-1);
 }
 
-size_t list_total_fulfil(l_list *l, int(*func)(void *))
+size_t list_count_fulfil(l_list *l, int(*func)(void *))
 {
     l_elem *e = l->first;
     size_t count = 0;
