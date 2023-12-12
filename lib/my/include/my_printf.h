@@ -13,7 +13,7 @@
     #include <stdlib.h>
 
 //flags "-+ #0"
-typedef struct data_parameter{
+typedef struct data_parameter {
     char specifier;
     bool flags[5];
     int width;
