@@ -28,25 +28,11 @@ l_elem *list_get_last(l_list *l)
     return (e);
 }
 
-int list_append(l_list *l, void *content)
-{
-    l_elem *last = list_get_last(l);
-    l_elem *e = create_elem(content);
-
-    if (e == NULL)
-        return (0);
-    if (last == NULL)
-        l->first = e;
-    else
-        last->next = e;
-    l->len ++;
-    return (1);
-}
-
 void list_pop_first(l_list *l)
 {
     l_elem *e = l->first;
 
     l->first = e->next;
     destroy_elem(e, l->del);
+    l->len --;
 }

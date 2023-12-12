@@ -27,17 +27,6 @@ void destroy_elem(l_elem *e, void(*del)(void *))
     free(e);
 }
 
-l_elem *list_last_element(l_list *l)
-{
-    l_elem *e = l->first;
-
-    if (e == NULL)
-        return (NULL);
-    while (e->next != NULL)
-        e = e->next;
-    return (e);
-}
-
 l_list *list_destroy(l_list *l)
 {
     size_t i = 0;
@@ -69,4 +58,16 @@ l_list *list_create(void(*del)(void *))
     l->first = NULL;
     l->del = del;
     return (l);
+}
+
+l_elem *list_get_index(l_list *l, size_t index)
+{
+    l_elem *e = l->first;
+    size_t i = 0;
+
+    while (e != NULL && i < index){
+        i ++;
+        e = e->next;
+    }
+    return (e);
 }

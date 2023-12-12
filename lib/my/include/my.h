@@ -74,6 +74,7 @@ int my_dprintf(int fd, char const *format, ...);
 l_list *list_destroy(l_list *l);
 l_list *list_create(void(*del)(void *));
 size_t list_len(l_list *l);
+int list_push(l_list *l, void *content);
 int list_append(l_list *l, void *content);
 void **list_export(l_list *l);
 void list_pop_first(l_list *l);

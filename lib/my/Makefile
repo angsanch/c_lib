@@ -58,6 +58,7 @@ C_FILES = src/basic/my_strupcase.c \
 			src/linked_lists/basic_list.c \
 			src/linked_lists/simple_operations.c \
 			src/linked_lists/iter_tools.c \
+			src/linked_lists/modifications.c \
 			src/engine/creation.c \
 			src/engine/destruction.c \
 			src/engine/ticks.c \
