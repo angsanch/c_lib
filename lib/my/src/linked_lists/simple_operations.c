@@ -36,3 +36,13 @@ void list_pop_first(l_list *l)
     destroy_elem(e, l->del);
     l->len --;
 }
+
+void *list_get_index(l_list *l, size_t index)
+{
+    l_elem *e = list_get_index_elem(l, index);
+
+    if (e == NULL)
+        return (NULL);
+    else
+        return (e->content);
+}

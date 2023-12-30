@@ -60,7 +60,7 @@ l_list *list_create(void(*del)(void *))
     return (l);
 }
 
-l_elem *list_get_index(l_list *l, size_t index)
+l_elem *list_get_index_elem(l_list *l, size_t index)
 {
     l_elem *e = l->first;
     size_t i = 0;

@@ -52,9 +52,9 @@ int tick_window(dn_window *window)
     dn_envinfo env = {get_timedelta(window->clock), window, &event};
 
     sfRenderWindow_clear(window->window, sfBlack);
-    list_iter_data(window->scene->sprites, &env, &call_sprite_tick);
+    list_iter(window->scene->sprites, &call_sprite_tick, &env);
     while (sfRenderWindow_pollEvent(window->window, &event)){
-        list_iter_data(window->scene->sprites, &env, &call_sprite_event);
+        list_iter(window->scene->sprites, &call_sprite_event, &env);
         if (event.type == sfEvtClosed)
             return (0);
         if (event.type == sfEvtResized){
@@ -62,7 +62,7 @@ int tick_window(dn_window *window)
             window->size.y = event.size.height;
         }
     }
-    list_iter_data(window->scene->sprites, window->window, &display_sprite);
+    list_iter(window->scene->sprites, &display_sprite, window->window);
     sfRenderWindow_display(window->window);
     return (1);
 }

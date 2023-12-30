@@ -15,7 +15,7 @@ void **list_export(l_list *l)
 
     if (l->len == 0)
         return (NULL);
-    export = malloc(sizeof(char *) * l->len);
+    export = malloc(sizeof(char *) * (l->len + 1));
     if (export == NULL)
         return (NULL);
     e = l->first;
@@ -24,7 +24,20 @@ void **list_export(l_list *l)
         e = e->next;
         i ++;
     }
+    export[l->len] = NULL;
     return (export);
+}
+
+void list_import(l_list *l, void **data)
+{
+    size_t i = 0;
+    l_elem *e = l->first;
+
+    while (i < l->len){
+        e->content = data[i];
+        e = e->next;
+        i ++;
+    }
 }
 
 void list_iter(l_list *l, void(*func)(void *, void *), void *data)
@@ -37,13 +50,13 @@ void list_iter(l_list *l, void(*func)(void *, void *), void *data)
     }
 }
 
-ssize_t list_first_fulfil(l_list *l, int(*func)(void *))
+ssize_t list_first_fulfil(l_list *l, int(*func)(void *, void *), void *data)
 {
     l_elem *e = l->first;
     size_t i = 0;
 
     while (e != NULL){
-        if (func(e))
+        if (func(e->content, data))
             return (i);
         e = e->next;
         i ++;
@@ -51,13 +64,13 @@ ssize_t list_first_fulfil(l_list *l, int(*func)(void *))
     return (-1);
 }
 
-size_t list_count_fulfil(l_list *l, int(*func)(void *))
+size_t list_count_fulfil(l_list *l, int(*func)(void *, void *), void *data)
 {
     l_elem *e = l->first;
     size_t count = 0;
 
     while (e != NULL){
-        if (func(e))
+        if (func(e->content, data))
             count ++;
         e = e->next;
     }

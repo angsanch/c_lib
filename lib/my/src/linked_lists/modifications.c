@@ -41,7 +41,7 @@ int list_intert(l_list *l, size_t index, void *content)
 
     if (index == 0)
         return (list_push(l, content));
-    prev = list_get_index(l, index - 1);
+    prev = list_get_index_elem(l, index - 1);
     if (prev == NULL)
         return (0);
     e = create_elem(content);
@@ -62,7 +62,7 @@ int list_pop(l_list *l, size_t index)
         list_pop_first(l);
         return (1);
     }
-    prev = list_get_index(l, index - 1);
+    prev = list_get_index_elem(l, index - 1);
     if (prev == NULL)
         return (0);
     deletion = prev->next;

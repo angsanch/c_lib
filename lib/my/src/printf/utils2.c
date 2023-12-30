@@ -127,7 +127,7 @@ char *string_print(parameter *param, va_list *ap, int n)
     if (str == NULL)
         return (NULL);
     len = my_strlen(str);
-    if (param->precision < len){
+    if (param->precision < len && param->precision >= 0){
         str[param->precision] = '\0';
         len = param->precision;
     }
