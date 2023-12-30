@@ -16,10 +16,10 @@ char *(*param_str[])(parameter *param, va_list *ap, int n) = {
     &signed_decimal_integer, &signed_decimal_integer,
     &unsigned_decimal_integer, &unsigned_decimal_integer,
     &unsigned_decimal_integer, &unsigned_decimal_integer,
+    &print_float, &print_float,
     &signed_decimal_integer, &signed_decimal_integer,
     &signed_decimal_integer, &signed_decimal_integer,
-    &signed_decimal_integer, &signed_decimal_integer,
-    &signed_decimal_integer, &signed_decimal_integer,
+    &print_float, &print_float,
     &character_print, &string_print,
     &pointer_print, &length_exporter,
     &print_percentage
@@ -42,6 +42,8 @@ char *string_parameter(parameter *param, va_list *ap, int *n)
     if (param->precision == -2)
         param->precision = va_arg(*ap, int);
     str = (*param_str[index])(param, ap, *n);
+    if (str == NULL)
+        return (NULL);
     *n += my_strlen(str);
     return (str);
 }

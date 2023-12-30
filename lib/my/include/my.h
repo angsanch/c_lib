@@ -14,6 +14,7 @@
 
 char *convert_base(char const *nbr,
     char const *base_from, char const *base_to);
+void *my_calloc(size_t count, size_t size);
 int my_compute_power_rec(int nb, int p);
 int my_compute_square_root(int nb);
 int my_find_prime_sup(int nb);
@@ -45,6 +46,8 @@ char *my_strrchr(char const *str, char c);
 int my_strcmp(char const *s1, char const *s2);
 char *my_strcpy(char *dest, char const *src);
 char *my_strdup(char const *src);
+char *my_strjoin(char *s1, char *s2);
+char *my_coolerstrjoin(size_t n, ...);
 int my_isalpha(char c);
 int my_str_isalpha(char const *str);
 int my_islower(char c);
