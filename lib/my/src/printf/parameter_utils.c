@@ -43,8 +43,10 @@ static int precision_called(char const *format, parameter *p, int i)
         p->precision = -2;
         return (i + 1);
     }
-    if (!my_isnumeric(format[i]))
+    if (!my_isnumeric(format[i])){
+        p->precision = 0;
         return (i);
+    }
     p->precision = my_getnbr(format + i);
     return (my_intlen(p->precision) + i);
 }

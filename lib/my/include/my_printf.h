@@ -28,11 +28,14 @@ char *genericf(char const *format, va_list *ap);
 parameter *parse_parameter(char const *format, int *i);
 void destroy_param(parameter *p);
 char *prepare_parts(parameter *param, char *sign, char *number);
+void set_base(char specifier, char *base);
+void set_sign(parameter *param, int plus, char *sign);
 char *my_lluitoa_base(unsigned long long int nb, char const *base,
     int min_len);
 
 char *signed_decimal_integer(parameter *param, va_list *ap, int n);
 char *unsigned_decimal_integer(parameter *param, va_list *ap, int n);
+char *print_float(parameter *param, va_list *ap, int n);
 char *length_exporter(parameter *param, va_list *ap, int n);
 char *character_print(parameter *param, va_list *ap, int n);
 char *string_print(parameter *param, va_list *ap, int n);

@@ -127,7 +127,7 @@ char *string_print(parameter *param, va_list *ap, int n)
     if (str == NULL)
         return (NULL);
     len = my_strlen(str);
-    if (param->precision < len){
+    if (param->precision < len && param->precision >= 0){
         str[param->precision] = '\0';
         len = param->precision;
     }
@@ -148,12 +148,10 @@ char *pointer_print(parameter *param, va_list *ap, int n)
     (void)n;
     parsed_number = my_lluitoa_base(ptr, "0123456789abcdef", param->precision);
     if (parsed_number == NULL)
-        return (0);
-    if (!param->flags[1]){
-        if (param->flags[2])
-            sign[0] = ' ';
-    }
-    result = prepare_parts(param, sign, parsed_number);
+        return (NULL);
+    if ((!param->flags[1]) && param->flags[2])
+        sign[0] = ' ';
+    result = prepare_parts(param, sign + 1 - param->flags[2], parsed_number);
     free(parsed_number);
     return (result);
 }

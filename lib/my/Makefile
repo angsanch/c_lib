@@ -50,11 +50,14 @@ C_FILES = src/basic/my_strupcase.c \
 			src/basic/my_strchr.c \
 			src/basic/my_strrchr.c \
 			src/basic/my_memcpy.c \
+			src/basic/my_strjoin.c \
+			src/basic/my_calloc.c \
 			src/printf/genericf.c \
 			src/printf/f_functions.c \
 			src/printf/parameter_utils.c \
 			src/printf/utils1.c \
 			src/printf/utils2.c \
+			src/printf/utils3.c \
 			src/linked_lists/basic_list.c \
 			src/linked_lists/simple_operations.c \
 			src/linked_lists/iter_tools.c \
@@ -65,13 +68,15 @@ C_FILES = src/basic/my_strupcase.c \
 			src/engine/finder.c \
 			src/engine/sprite_helper.c \
 			src/engine/fps_controller.c \
-            src/engine/sprite_creation.c
+            src/engine/sprite_creation.c \
 
 
 O_FILES = $(C_FILES:.c=.o)
 
 HEADERS = include/my.h \
 			include/structs.h
+
+EXTERN_H = $(subst include/,../../include/,$(HEADERS))
 
 NAME=libmy.a
 
@@ -87,6 +92,8 @@ clean:
 	rm -f $(O_FILES)
 
 fclean: clean
+	rm -f ../$(NAME)
+	rm -f $(EXTERN_H)
 	rm -f $(NAME)
 
 re: fclean all
