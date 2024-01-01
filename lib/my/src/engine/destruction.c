@@ -7,15 +7,10 @@
 
 #include "../../include/my.h"
 
-void destroy_sound(dn_sound *sound)
-{
-    sfSoundBuffer_destroy(sound->sound);
-    free(sound);
-}
-
 void destroy_texture(dn_texture *texture)
 {
     sfTexture_destroy(texture->texture);
+    free(texture->id);
     free(texture);
 }
 
@@ -30,8 +25,8 @@ void destroy_scene(dn_scene *scene)
 {
     list_destroy(scene->sprites);
     list_destroy(scene->textures);
-    list_destroy(scene->sounds);
     sfMusic_destroy(scene->music);
+    free(scene->id);
     free(scene);
 }
 

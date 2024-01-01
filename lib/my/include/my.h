@@ -90,11 +90,10 @@ ssize_t list_first_fulfil(l_list *l, int(*func)(void *, void *), void *data);
 size_t list_total_fulfil(l_list *l, int(*func)(void *, void *), void *data);
 int list_sort(l_list *l, int(*comp)(void *, void *));
 
-dn_sound *search_sound(dn_scene *scene, size_t id);
-dn_texture *search_texture(dn_scene *scene, size_t id);
+dn_texture *search_texture(dn_scene *scene, char *id);
 dn_sprite *search_sprite(dn_scene *scene, size_t id);
-dn_scene *search_scene(dn_window *window, size_t id);
-dn_scene *create_scene(dn_window *window);
+int focus_scene(dn_window *window, char *id);
+dn_scene *create_scene(char const *id);
 void add_sprite(dn_scene *scene);
 void add_texture(dn_scene *scene, dn_texture *texture);
 void add_functions(dn_scene *scene,
@@ -113,8 +112,6 @@ dn_sprite *create_sprite(dn_scene *scene);
 dn_window *create_window(int width, int height, char *name, sfUint32 style);
 void destroy_window(dn_window *window);
 int tick_window(dn_window *window);
-dn_fps *create_fps_limiter(float max);
-void next_frame(dn_fps *fps);
-void destroy_fps_limiter(dn_fps *fps);
+void limit_fps(dn_window *window, unsigned int limit);
 
 #endif

@@ -8,24 +8,26 @@
 #include "../../include/my.h"
 #include "../../include/engine_utils.h"
 
-dn_sound *create_sound(dn_scene *scene, char const *path)
+static char *path2id(char const *path)
 {
-    dn_sound *sound = malloc(sizeof(dn_sound) * 1);
+    char *result;
+    char const *start;
+    ssize_t len;
 
-    if (sound == NULL)
+    start = my_strrchr(path, '/');
+    if (start == NULL)
+        start = path;
+    else
+        start ++;
+    len = my_strchr_index(start, '.');
+    if (len == -1)
+        len = my_strlen(start);
+    result = malloc(sizeof(char) * (len + 1));
+    if (result == NULL)
         return (NULL);
-    sound->sound = sfSoundBuffer_createFromFile(path);
-    if (sound->sound == NULL){
-        free(sound);
-        return (NULL);
-    }
-    if (!list_append(scene->sounds, sound)){
-        free(sound);
-        return (NULL);
-    }
-    sound->id = scene->id_sound;
-    scene->id_sound += 1;
-    return (sound);
+    my_memcpy(result, start, len);
+    result[len] = '\0';
+    return (result);
 }
 
 dn_texture *create_texture(dn_scene *scene, char const *path,
@@ -44,8 +46,7 @@ dn_texture *create_texture(dn_scene *scene, char const *path,
         free(texture);
         return (NULL);
     }
-    texture->id = scene->id_texture;
-    scene->id_texture += 1;
+    texture->id = path2id(path);
     texture->x_tiles = x_tiles;
     texture->y_tiles = y_tiles;
     return (texture);
@@ -74,7 +75,7 @@ dn_sprite *create_sprite(dn_scene *scene)
     return (sprite);
 }
 
-dn_scene *create_scene(dn_window *window)
+dn_scene *create_scene(char const *id)
 {
     dn_scene *scene = malloc(sizeof(dn_scene) * 1);
 
@@ -82,19 +83,14 @@ dn_scene *create_scene(dn_window *window)
         return (NULL);
     scene->music = NULL;
     scene->id_sprite = 0;
-    scene->id_texture = 0;
-    scene->id_sound = 0;
     scene->sprites = list_create(&destroy_sprite);
     scene->textures = list_create(&destroy_texture);
-    scene->sounds = list_create(&destroy_sound);
     scene->creation = NULL;
-    if (scene->sprites == NULL || scene->textures == NULL ||
-        scene->sounds == NULL){
+    if (scene->sprites == NULL || scene->textures == NULL){
         destroy_scene(scene);
         return (NULL);
     }
-    scene->id = window->id_scene;
-    window->id_scene += 1;
+    scene->id = my_strdup(id);
     return (scene);
 }
 
@@ -107,7 +103,6 @@ dn_window *create_window(int width, int height, char *name, sfUint32 style)
         return (NULL);
     window->window = sfRenderWindow_create(mode, name, style, NULL);
     window->scene = NULL;
-    window->id_scene = 0;
     window->resolution.x = width;
     window->resolution.y = height;
     window->size.x = width;
@@ -118,6 +113,6 @@ dn_window *create_window(int width, int height, char *name, sfUint32 style)
         return (NULL);
     }
     window->clock = sfClock_create();
-    window->scene = create_scene(window);
+    window->scene = create_scene("master");
     return (window);
 }

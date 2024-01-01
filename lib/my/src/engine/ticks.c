@@ -40,7 +40,7 @@ static void display_sprite(void *sprite_void, void *window_void)
 
 static float get_timedelta(sfClock *clock)
 {
-    float timedelta = sfTime_asSeconds(sfClock_getElapsedTime(clock));
+    float timedelta = sfClock_getElapsedTime(clock).microseconds / 1000;
 
     sfClock_restart(clock);
     return (timedelta);

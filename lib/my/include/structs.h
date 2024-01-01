@@ -20,12 +20,8 @@ typedef struct linked_list_container {
     void(*del)(void *);
 } l_list;
 
-typedef struct dn_sound_container {
-    size_t id;
-    sfSoundBuffer *sound;
-} dn_sound;
 typedef struct dn_texture_container {
-    size_t id;
+    char *id;
     sfTexture *texture;
     size_t x_tiles;
     size_t y_tiles;
@@ -33,12 +29,9 @@ typedef struct dn_texture_container {
 typedef struct dn_scene_container {
     l_list *sprites;
     l_list *textures;
-    l_list *sounds;
     sfMusic *music;
     size_t id_sprite;
-    size_t id_texture;
-    size_t id_sound;
-    size_t id;
+    char *id;
     void *creation;
 } dn_scene;
 typedef struct dn_window_container {
@@ -46,7 +39,6 @@ typedef struct dn_window_container {
     sfClock *clock;
     dn_scene *scene;
     l_list *scenes;
-    size_t id_scene;
     sfVector2i resolution;
     sfVector2i size;
 } dn_window;
@@ -66,9 +58,5 @@ typedef struct dn_sprite_container {
     void(*destroy_data)(void *);
     void *data;
 } dn_sprite;
-typedef struct dn_fpscontroller_container {
-    sfClock *clock;
-    float expected;
-}dn_fps;
 
 #endif
