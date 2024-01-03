@@ -66,6 +66,7 @@ C_FILES = src/basic/my_strupcase.c \
 			src/engine/creation.c \
 			src/engine/destruction.c \
 			src/engine/ticks.c \
+			src/engine/displayer.c \
 			src/engine/finder.c \
 			src/engine/sprite_helper.c \
 			src/engine/controller.c \

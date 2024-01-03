@@ -25,19 +25,6 @@ static void call_sprite_event(void *sprite_void, void *env_void)
         (sprite->event)(sprite, env);
 }
 
-static void display_sprite(void *sprite_void, void *window_void)
-{
-    dn_sprite *sprite = sprite_void;
-    sfRenderWindow *window = window_void;
-
-    if (sprite->texture == NULL)
-        return;
-    sfSprite_setPosition(sprite->sprite, sprite->position);
-    sfSprite_setTexture(sprite->sprite, sprite->texture->texture, sfTrue);
-    sfSprite_setTextureRect(sprite->sprite, sprite->rect);
-    sfRenderWindow_drawSprite(window, sprite->sprite, NULL);
-}
-
 static float get_timedelta(sfClock *clock)
 {
     float timedelta = sfClock_getElapsedTime(clock).microseconds / 1000;

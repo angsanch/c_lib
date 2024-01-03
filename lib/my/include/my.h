@@ -10,6 +10,7 @@
 
     #include <stdlib.h>
     #include <unistd.h>
+    #include <stdbool.h>
     #include "structs.h"
 
 char *convert_base(char const *nbr,
@@ -95,12 +96,14 @@ dn_sprite *search_sprite(dn_scene *scene, size_t id);
 int focus_scene(dn_window *window, char *id);
 dn_scene *create_scene(char const *id);
 void add_sprite(dn_scene *scene);
-void add_texture(dn_scene *scene, dn_texture *texture);
-void add_functions(dn_scene *scene,
+void add_sprite_set_graphics(dn_scene *scene, char *texture_id,
+    void(*config)(dn_sprite *));
+void add_sprite_set_functions(dn_scene *scene,
     void(*tick)(struct dn_sprite_container *, dn_envinfo *),
     void(*event)(struct dn_sprite_container *, dn_envinfo *));
 void add_push_sprite(dn_scene *scene);
-void add_data(dn_scene *scene, void *data, void(*destroy_data)(void *));
+void add_sprite_set_data(dn_scene *scene, void *data,
+    void(*destroy_data)(void *));
 void sprite_link_texture(dn_sprite *sprite, dn_texture *texture);
 void sprite_add_data(dn_sprite *sprite, void *data,
     void(*destroy_data)(void *));
@@ -112,6 +115,7 @@ dn_sprite *create_sprite(dn_scene *scene);
 dn_window *create_window(int width, int height, char *name, sfUint32 style);
 void destroy_window(dn_window *window);
 int tick_window(dn_window *window);
+void display_sprite(void *sprite_void, void *window_void);
 void limit_fps(dn_window *window, unsigned int limit);
 
 #endif

@@ -47,12 +47,22 @@ typedef struct dn_environment_info {
     dn_window *window;
     sfEvent *event;
 }dn_envinfo;
+typedef struct dn_sprite_display_info {
+    int rotate_texture;
+    int rotate_outline;
+    dn_texture *texture;
+    sfIntRect rect;
+    bool draw_texture;
+    sfRectangleShape *outline;
+    sfColor outline_color;
+    bool draw_outline;
+} dn_display_info;
 typedef struct dn_sprite_container {
     size_t id;
     sfSprite *sprite;
+    float angle;
     sfVector2f position;
-    dn_texture *texture;
-    sfIntRect rect;
+    dn_display_info display;
     void(*tick)(struct dn_sprite_container *, dn_envinfo *);
     void(*event)(struct dn_sprite_container *, dn_envinfo *);
     void(*destroy_data)(void *);

@@ -52,6 +52,18 @@ dn_texture *create_texture(dn_scene *scene, char const *path,
     return (texture);
 }
 
+static void set_sprite_display(dn_display_info *display)
+{
+    display->rotate_texture = 1;
+    display->rotate_outline = 1;
+    display->texture = NULL;
+    display->draw_texture = true;
+    display->outline = sfRectangleShape_create();
+    sfRectangleShape_setFillColor(display->outline, (sfColor){0, 0, 0, 0});
+    display->outline_color = sfBlack;
+    display->draw_outline = false;
+}
+
 dn_sprite *create_sprite(dn_scene *scene)
 {
     dn_sprite *sprite = malloc(sizeof(dn_sprite) * 1);
@@ -65,7 +77,7 @@ dn_sprite *create_sprite(dn_scene *scene)
     sprite->id = scene->id_sprite;
     scene->id_sprite += 1;
     sprite->sprite = sfSprite_create();
-    sprite->texture = NULL;
+    set_sprite_display(&sprite->display);
     sprite->tick = NULL;
     sprite->event = NULL;
     sprite->destroy_data = NULL;
