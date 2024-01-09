@@ -61,7 +61,13 @@ static void set_sprite_display(dn_display_info *display)
     display->outline = sfRectangleShape_create();
     sfRectangleShape_setFillColor(display->outline, (sfColor){0, 0, 0, 0});
     display->outline_color = sfBlack;
+    display->outline_size = (sfVector2f){0, 0};
     display->draw_outline = false;
+    display->circle = sfCircleShape_create();
+    sfCircleShape_setFillColor(display->circle, (sfColor){0, 0, 0, 0});
+    display->circle_color = sfBlack;
+    display->circle_size = 0;
+    display->draw_circle = false;
 }
 
 dn_sprite *create_sprite(dn_scene *scene)
@@ -82,8 +88,9 @@ dn_sprite *create_sprite(dn_scene *scene)
     sprite->event = NULL;
     sprite->destroy_data = NULL;
     sprite->data = NULL;
-    sprite->position.x = 0;
-    sprite->position.y = 0;
+    sprite->position = (sfVector2f){0, 0};
+    sprite->angle = 0;
+    sprite->collision = 0;
     return (sprite);
 }
 
@@ -115,16 +122,16 @@ dn_window *create_window(int width, int height, char *name, sfUint32 style)
         return (NULL);
     window->window = sfRenderWindow_create(mode, name, style, NULL);
     window->scene = NULL;
-    window->resolution.x = width;
-    window->resolution.y = height;
-    window->size.x = width;
-    window->size.y = height;
+    window->resolution = (sfVector2i){width, height};
+    window->size = (sfVector2i){width, height};
     window->scenes = list_create(&destroy_scene);
     if (window->scenes == NULL){
         free(window);
         return (NULL);
     }
+    window->to_be_closed = false;
     window->clock = sfClock_create();
     window->scene = create_scene("master");
+    window->manage_collision = NULL;
     return (window);
 }

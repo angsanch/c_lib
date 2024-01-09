@@ -6,6 +6,7 @@
 */
 
 #include "../../include/my.h"
+#include "../../include/engine_utils.h"
 
 static void call_sprite_tick(void *sprite_void, void *env_void)
 {
@@ -40,6 +41,8 @@ int tick_window(dn_window *window)
 
     sfRenderWindow_clear(window->window, sfBlack);
     list_iter(window->scene->sprites, &call_sprite_tick, &env);
+    if (window->to_be_closed)
+        return (0);
     while (sfRenderWindow_pollEvent(window->window, &event)){
         list_iter(window->scene->sprites, &call_sprite_event, &env);
         if (event.type == sfEvtClosed)
@@ -49,6 +52,7 @@ int tick_window(dn_window *window)
             window->size.y = event.size.height;
         }
     }
+    collisions(window);
     list_iter(window->scene->sprites, &display_sprite, window->window);
     sfRenderWindow_display(window->window);
     return (1);

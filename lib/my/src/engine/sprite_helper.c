@@ -19,9 +19,17 @@ static sfIntRect create_rect(sfTexture *texture,
 
 void sprite_link_texture(dn_sprite *sprite, dn_texture *texture)
 {
-    sprite->display.texture = texture;
-    sprite->display.rect = create_rect(texture->texture,
+    sfIntRect rect = create_rect(texture->texture,
         texture->x_tiles, texture->y_tiles);
+    sfVector2f halved = {rect.width / 2, rect.height / 2};
+
+    sprite->display.texture = texture;
+    sprite->display.rect = rect;
+    sprite->display.outline_size = (sfVector2f){rect.width, rect.height};
+    sprite->display.circle_size = MAX(rect.width, rect.height) / 2;
+    sfSprite_setOrigin(sprite->sprite, halved);
+    sfCircleShape_setOrigin(sprite->display.circle, halved);
+    sprite->offset = (sfVector2f){-halved.x, -halved.y};
 }
 
 void sprite_add_data(dn_sprite *sprite, void *data,
