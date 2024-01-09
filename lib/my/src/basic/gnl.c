@@ -36,10 +36,10 @@ static void extract_line(file_buffer *f)
     my_memmove(f->buffer, f->buffer + f->len + 1, f->buff_len);
 }
 
-static void free_file_buf_by_read(file_buffer *f, long readed)
+static void free_file_buf_by_read(file_buffer *f)
 {
-    if (readed == 0 && f->buff_len == 0)
-        free(f->buffer);
+    free(f->buffer);
+    f->buffer = NULL;
 }
 
 static int read_until_end_line(int fd, file_buffer *f)
@@ -53,7 +53,7 @@ static int read_until_end_line(int fd, file_buffer *f)
         readed = read(fd, buffer, BUFFER_SIZE);
         if (readed <= 0){
             free(buffer);
-            free_file_buf_by_read(f, readed);
+            free_file_buf_by_read(f);
             return (readed == 0);
         }
         f->buffer = memjoin_free(f->buffer, f->buff_len, buffer, readed);
@@ -68,7 +68,6 @@ static int read_until_end_line(int fd, file_buffer *f)
 static char *get_line(int fd, file_buffer *f)
 {
     if (read_until_end_line(fd, f) == 0){
-        free(f->buffer);
         f->buff_len = 0;
         f->len = 0;
         return (NULL);
