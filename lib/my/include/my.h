@@ -101,7 +101,7 @@ int list_push(l_list *l, void *content);
 int list_append(l_list *l, void *content);
 int list_intert(l_list *l, size_t index, void *content);
 int list_pop(l_list *l, size_t index);
-void *list_get_index(l_list *l, size_t index);
+void *list_get_index(l_list *l, ssize_t index);
 void list_import(l_list *l, void **data);
 void **list_export(l_list *l);
 void list_pop_first(l_list *l);
