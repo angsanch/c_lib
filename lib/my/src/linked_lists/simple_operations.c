@@ -12,10 +12,8 @@ size_t list_len(l_list *l)
     l_elem *e = l->first;
     size_t i = 0;
 
-    while (e != NULL){
+    while (e != NULL)
         e = e->next;
-        i ++;
-    }
     return (i);
 }
 
@@ -39,15 +37,22 @@ void list_pop_first(l_list *l)
     l->len --;
 }
 
-void *list_get_index(l_list *l, ssize_t index)
+l_elem *list_get_index_elem(l_list *l, size_t index)
 {
-    l_elem *e;
+    l_elem *e = l->first;
+    size_t i = 0;
 
-    if (index < 0)
-        index = l->len + index;
-    if (index < 0 || index >= l->len)
-        return (NULL);
-    e = list_get_index_elem(l, index);
+    while (e != NULL && i < index){
+        i ++;
+        e = e->next;
+    }
+    return (e);
+}
+
+void *list_get_index(l_list *l, size_t index)
+{
+    l_elem *e = list_get_index_elem(l, index);
+
     if (e == NULL)
         return (NULL);
     else

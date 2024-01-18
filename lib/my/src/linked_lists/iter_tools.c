@@ -42,13 +42,11 @@ void list_import(l_list *l, void **data)
 
 void list_iter(l_list *l, void(*func)(void *, void *), void *data)
 {
-    l_elem *next;
     l_elem *e = l->first;
 
     while (e != NULL){
-        next = e->next;
         (*func)(e->content, data);
-        e = next;
+        e = e->next;
     }
 }
 
@@ -66,7 +64,7 @@ ssize_t list_first_fulfil(l_list *l, int(*func)(void *, void *), void *data)
     return (-1);
 }
 
-size_t list_total_fulfil(l_list *l, int(*func)(void *, void *), void *data)
+size_t list_count_fulfil(l_list *l, int(*func)(void *, void *), void *data)
 {
     l_elem *e = l->first;
     size_t count = 0;
