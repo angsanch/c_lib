@@ -39,6 +39,8 @@ void my_showmem(char const *str, size_t size);
 void my_showstr(char const *str);
 void my_show_word_array(char *const *tab);
 void my_sort_int_array(int *array, size_t size);
+char **free_char_array(char **result);
+char **my_split(char const *s, char c);
 char *my_strcapitalize(char *str);
 char *my_strcat(char *dest, char const *src);
 ssize_t my_strchr_index(char const *str, char c);

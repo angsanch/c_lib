@@ -52,6 +52,7 @@ C_FILES = src/basic/my_strupcase.c \
 			src/basic/my_memcpy.c \
 			src/basic/my_strjoin.c \
 			src/basic/my_calloc.c \
+			src/basic/my_split.c \
 			src/printf/genericf.c \
 			src/printf/f_functions.c \
 			src/printf/parameter_utils.c \
