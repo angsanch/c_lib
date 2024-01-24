@@ -53,6 +53,10 @@ C_FILES = src/basic/my_strupcase.c \
 			src/basic/my_strjoin.c \
 			src/basic/my_calloc.c \
 			src/basic/my_split.c \
+			src/basic/my_memjoin.c \
+			src/basic/my_memchr.c \
+			src/basic/my_memmove.c \
+			src/basic/gnl.c \
 			src/printf/genericf.c \
 			src/printf/f_functions.c \
 			src/printf/parameter_utils.c \
@@ -67,12 +71,14 @@ C_FILES = src/basic/my_strupcase.c \
 			src/linked_lists/sort.c \
 			src/engine/creation.c \
 			src/engine/destruction.c \
+			src/engine/deletion.c \
 			src/engine/ticks.c \
 			src/engine/displayer.c \
 			src/engine/finder.c \
 			src/engine/sprite_helper.c \
 			src/engine/controller.c \
             src/engine/sprite_creation.c \
+			src/engine/collisions.c \
 
 
 O_FILES = $(C_FILES:.c=.o)

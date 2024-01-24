@@ -10,12 +10,16 @@
 
     #include <stdlib.h>
     #include <unistd.h>
+    #include <stdio.h>
+    #include <fcntl.h>
     #include <stdbool.h>
     #include "structs.h"
     #include "macros.h"
 
+
 char *convert_base(char const *nbr,
     char const *base_from, char const *base_to);
+char *get_next_line(int fd);
 void *my_calloc(size_t count, size_t size);
 int my_compute_power_rec(int nb, int p);
 int my_compute_square_root(int nb);
@@ -27,7 +31,10 @@ int my_getnbr(char const *str);
 void my_isneg(int n);
 int my_is_prime(int nb);
 int my_memcmp(const void *s1, const void *s2, size_t n);
+int my_memchr_index(const void *m, int c, int len);
 void *my_memcpy(void *dest, const void *src, size_t n);
+void *my_memjoin(const void *m1, size_t s1, const void *m2, size_t s2);
+void *my_memmove(void *dst, const void *src, size_t n);
 void *my_memset(void *b, int c, size_t len);
 void my_putchar(char c);
 int my_putnbr_base(int nbr, char const *base);
@@ -117,10 +124,13 @@ int is_on_sprite(dn_window *window, dn_sprite *sprite, int x, int y);
 dn_texture *create_texture(dn_scene *scene, char const *path,
     size_t x_tiles, size_t y_tiles);
 dn_sprite *create_sprite(dn_scene *scene);
+int delete_sprite_by_id(dn_scene *scene, size_t id);
 dn_window *create_window(int width, int height, char *name, sfUint32 style);
 void destroy_window(dn_window *window);
 int tick_window(dn_window *window);
 void display_sprite(void *sprite_void, void *window_void);
 void limit_fps(dn_window *window, unsigned int limit);
+void window_collisions(dn_window *window,
+    void (*manage)(dn_coll_sprites *, dn_window *));
 
 #endif
