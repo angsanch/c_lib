@@ -7,7 +7,7 @@
 
 #include "../../include/linked_lists_utils.h"
 
-void **list_export(l_list *l)
+void **list_export(l_list *l, void *(*transform)(void *))
 {
     void **export;
     size_t i = 0;
@@ -20,7 +20,10 @@ void **list_export(l_list *l)
         return (NULL);
     e = l->first;
     while (i < l->len){
-        export[i] = e->content;
+        if (transform == NULL)
+            export[i] = e->content;
+        else
+            export[i] = transform(e->content);
         e = e->next;
         i ++;
     }

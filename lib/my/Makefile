@@ -14,7 +14,8 @@ C_FILES = src/basic/my_strupcase.c \
  			src/basic/my_str_islower.c \
  			src/basic/my_str_to_word_array.c \
  			src/basic/my_str_isnum.c \
- 			src/basic/my_strcpy.c \
+ 			src/basic/my_str_isalnum.c \
+			src/basic/my_strcpy.c \
  			src/basic/my_put_nbr.c \
  			src/basic/my_strcmp.c \
  			src/basic/my_find_prime_sup.c \

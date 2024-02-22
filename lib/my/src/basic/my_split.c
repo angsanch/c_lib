@@ -48,6 +48,8 @@ char **free_string_array(char **result)
 {
     int i = 0;
 
+    if (result == NULL)
+        return (NULL);
     while (result[i]){
         free(result[i]);
         i ++;
