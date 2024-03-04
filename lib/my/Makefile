@@ -54,6 +54,7 @@ C_FILES = src/basic/my_strupcase.c \
 			src/basic/my_strjoin.c \
 			src/basic/my_calloc.c \
 			src/basic/my_split.c \
+			src/basic/my_coolersplit.c \
 			src/basic/my_memjoin.c \
 			src/basic/my_memchr.c \
 			src/basic/my_memmove.c \
