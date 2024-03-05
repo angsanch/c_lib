@@ -16,7 +16,7 @@ O_FILES = $(C_FILES:.c=.o)
 NAME=
 
 $(NAME): lib/libmy.a $(O_FILES)
-	$(CC) $(CFLAGS) -o $(NAME) src/$(NAME).c $(O_FILES) lib/libmy.a
+	$(CC) $(CFLAGS) -o $(NAME) $(O_FILES) lib/libmy.a
 
 all: $(NAME)
 
