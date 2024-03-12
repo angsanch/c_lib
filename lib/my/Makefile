@@ -59,6 +59,8 @@ C_FILES = src/basic/my_strupcase.c \
 			src/basic/my_memchr.c \
 			src/basic/my_memmove.c \
 			src/basic/gnl.c \
+			src/basic/my_revmem.c \
+			src/basic/report_error.c \
 			src/printf/genericf.c \
 			src/printf/f_functions.c \
 			src/printf/parameter_utils.c \

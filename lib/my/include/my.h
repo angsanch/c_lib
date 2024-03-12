@@ -41,6 +41,7 @@ int my_putnbr_base(int nbr, char const *base);
 void my_put_nbr(int nb);
 size_t my_putstr(char const *str);
 void swap_chr(char *a, char *b);
+void my_revmem(void *str, size_t size);
 char *my_revstr(char *str);
 void my_showmem(char const *str, size_t size);
 void my_showstr(char const *str);
@@ -83,6 +84,7 @@ char **my_str_to_word_array(char const *str);
 void my_to_upper(char *chr);
 char *my_strupcase(char *str);
 void my_swap(int *a, int *b);
+int report_error(char *str, int response);
 
 int my_printf(char const *format, ...);
 int my_sprintf(char *str, char const *format, ...);

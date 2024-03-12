@@ -74,13 +74,13 @@ void copy_without_quotations(char *dst, char const *src, size_t n)
             block = l;
             l = 0;
         }
-        if (block == l)
-            block = 0;
+        block = (block == l) ? 0 : block;
         if (p_block == block)
             dst[d] = src[s];
         d += p_block == block;
         s ++;
     }
+    dst[d] = '\0';
 }
 
 static void *delete_splited(splited *spl, int delete_result)
