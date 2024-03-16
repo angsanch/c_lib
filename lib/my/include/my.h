@@ -105,7 +105,7 @@ void **list_export(l_list *l, void *(*transform)(void *));
 void list_pop_first(l_list *l);
 void list_iter(l_list *l, void(*func)(void *, void *), void *data);
 ssize_t list_first_fulfil(l_list *l, int(*func)(void *, void *), void *data);
-size_t list_total_fulfil(l_list *l, int(*func)(void *, void *), void *data);
+size_t list_count_fulfil(l_list *l, int(*func)(void *, void *), void *data);
 int list_sort(l_list *l, int(*comp)(void *, void *));
 
 dn_texture *search_texture(dn_scene *scene, char *id);
