@@ -98,7 +98,7 @@ ENGINE_SOURCE = src/engine/creation.c \
 			src/engine/collisions.c \
 			src/engine/buttons.c \
 
-C_FILES = 
+C_FILES =
 
 HEADERS = include/macros.h
 
