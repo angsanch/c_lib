@@ -5,7 +5,7 @@
 ** Replace substrings
 */
 
-#include "../../include/my.h"
+#include "../../include/basic_utils.h"
 
 static size_t coincidences(char const *base, char const *key, size_t key_len)
 {

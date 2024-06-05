@@ -5,8 +5,7 @@
 ** im doing this drunk
 */
 
-#include "../../include/my.h"
-#include "../../include/cooler_split.h"
+#include "../../include/basic_utils.h"
 
 static size_t find_next_start(splited_t *spl)
 {

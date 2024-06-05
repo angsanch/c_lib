@@ -5,8 +5,7 @@
 ** Basic utils
 */
 
-#include <stdlib.h>
-#include "../../include/my.h"
+#include "../../include/linked_list_utils.h"
 
 void delete_elem(l_elem_t *e, void(*del)(void *))
 {

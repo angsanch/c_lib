@@ -5,9 +5,7 @@
 ** print formats
 */
 
-#include <stdarg.h>
-#include "../../include/my.h"
-#include "../../include/my_printf.h"
+#include "../../include/my_printf_utils.h"
 
 static size_t my_dputstr(int fd, char const *str)
 {

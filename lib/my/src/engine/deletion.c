@@ -5,7 +5,7 @@
 ** Delete elemets from scene
 */
 
-#include "../../include/my.h"
+#include "../../include/engine_utils.h"
 
 static int sprite_has_id(void *sprite_void, void *id_void)
 {

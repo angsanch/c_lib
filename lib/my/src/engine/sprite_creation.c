@@ -5,7 +5,7 @@
 ** Smart sprite creation
 */
 
-#include "../../include/my.h"
+#include "../../include/engine_utils.h"
 
 void add_sprite(dn_scene_t *scene, float x, float y)
 {

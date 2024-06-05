@@ -5,11 +5,11 @@
 ** Linked list utils
 */
 
-#ifndef LINKED_LISTS_UTILS_H_
-    #define LINKED_LISTS_UTILS_H_
+#ifndef LINKED_LIST_UTILS_H_
+    #define LINKED_LIST_UTILS_H_
 
     #include <stdlib.h>
-    #include "my.h"
+    #include "linked_list.h"
 
 void initialize_elem(l_elem_t *e, void *content);
 l_elem_t *create_elem(void *content);

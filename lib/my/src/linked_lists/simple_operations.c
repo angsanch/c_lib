@@ -5,7 +5,7 @@
 ** Simple operations to the list
 */
 
-#include "../../include/linked_lists_utils.h"
+#include "../../include/linked_list_utils.h"
 
 size_t list_len(l_list_t *l)
 {

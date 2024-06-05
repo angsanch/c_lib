@@ -5,14 +5,7 @@
 ** Useful functions 2
 */
 
-#include <wchar.h>
-#include <stdint.h>
-#include <stddef.h>
-#include <stdarg.h>
-#include <stdlib.h>
-#include "../../include/my_printf.h"
-#include "../../include/my.h"
-#include <stdio.h>
+#include "../../include/my_printf_utils.h"
 
 static char *my_strt2str(wchar_t *strt)
 {

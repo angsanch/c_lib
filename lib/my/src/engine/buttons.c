@@ -5,7 +5,7 @@
 ** Simplify button creation
 */
 
-#include "../../include/my.h"
+#include "../../include/engine_utils.h"
 
 //sfFloatRect bounds = sfText_getLocalBounds(sprite->display.text);
 void config_button(dn_sprite_t *sprite)

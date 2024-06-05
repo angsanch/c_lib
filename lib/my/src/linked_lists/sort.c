@@ -5,7 +5,7 @@
 ** Sort the list
 */
 
-#include "../../include/linked_lists_utils.h"
+#include "../../include/linked_list_utils.h"
 
 static l_elem_t *elem_advance(l_elem_t *e, size_t steps)
 {

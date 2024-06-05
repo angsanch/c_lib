@@ -5,7 +5,7 @@
 ** Smart sprite creation
 */
 
-#include "../../include/my.h"
+#include "../../include/engine_utils.h"
 
 void add_sprite_set_text_style(dn_scene_t *scene, sfColor color, size_t size)
 {

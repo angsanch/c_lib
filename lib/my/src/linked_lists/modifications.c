@@ -5,7 +5,7 @@
 ** Modify elements
 */
 
-#include "../../include/linked_lists_utils.h"
+#include "../../include/linked_list_utils.h"
 
 int list_append(l_list_t *l, void *content)
 {

@@ -5,7 +5,7 @@
 ** Destroy the structs
 */
 
-#include "../../include/my.h"
+#include "../../include/engine_utils.h"
 
 void destroy_texture(dn_texture_t *texture)
 {

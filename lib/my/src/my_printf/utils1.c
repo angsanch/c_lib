@@ -5,13 +5,7 @@
 ** Useful functions
 */
 
-#include <stdint.h>
-#include <stddef.h>
-#include <stdarg.h>
-#include <stdlib.h>
-#include "../../include/my_printf.h"
-#include "../../include/my.h"
-#include <stdio.h>
+#include "../../include/my_printf_utils.h"
 
 static long long int get_lld(int length, va_list *ap)
 {

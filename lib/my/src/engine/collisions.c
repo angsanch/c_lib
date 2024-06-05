@@ -5,7 +5,6 @@
 ** Collide objects
 */
 
-#include "../../include/my.h"
 #include "../../include/engine_utils.h"
 
 static int present(void *sprite_void, void *nothing)

@@ -5,7 +5,6 @@
 ** Allocate and prepare the structs
 */
 
-#include "../../include/my.h"
 #include "../../include/engine_utils.h"
 
 extern char assets_font_ttf;
@@ -110,8 +109,8 @@ dn_scene_t *create_scene(char const *id)
         return (NULL);
     scene->music = NULL;
     scene->id_sprite = 0;
-    scene->sprites = list_create(&destroy_sprite);
-    scene->textures = list_create(&destroy_texture);
+    scene->sprites = list_create((void *)&destroy_sprite);
+    scene->textures = list_create((void *)&destroy_texture);
     scene->creation = NULL;
     if (scene->sprites == NULL || scene->textures == NULL){
         destroy_scene(scene);
@@ -134,7 +133,7 @@ dn_window_t *create_window(int width, int height, char *name, sfUint32 style)
     window->scene = NULL;
     window->resolution = (sfVector2i){width, height};
     window->size = (sfVector2i){width, height};
-    window->scenes = list_create(&destroy_scene);
+    window->scenes = list_create((void *)&destroy_scene);
     if (window->scenes == NULL){
         free(window);
         return (NULL);

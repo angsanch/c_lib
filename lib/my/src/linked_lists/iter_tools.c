@@ -5,7 +5,7 @@
 ** Iterating the list
 */
 
-#include "../../include/linked_lists_utils.h"
+#include "../../include/linked_list_utils.h"
 
 void **list_export(l_list_t *l, void *(*transform)(void *))
 {

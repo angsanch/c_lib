@@ -5,7 +5,6 @@
 ** Advance a tick
 */
 
-#include "../../include/my.h"
 #include "../../include/engine_utils.h"
 
 static void call_sprite_tick(void *sprite_void, void *env_void)

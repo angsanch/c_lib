@@ -5,7 +5,7 @@
 ** Split strings
 */
 
-#include "../../include/my.h"
+#include "../../include/basic_utils.h"
 
 static char *find_next_start(const char *str, char delimiter)
 {

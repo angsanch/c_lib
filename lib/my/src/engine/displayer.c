@@ -5,7 +5,7 @@
 ** Put sprites on screen
 */
 
-#include "../../include/my.h"
+#include "../../include/engine_utils.h"
 
 static void display_sprite_texture(dn_sprite_t *sprite, sfRenderWindow *window)
 {

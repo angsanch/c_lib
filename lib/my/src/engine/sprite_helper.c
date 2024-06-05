@@ -5,7 +5,7 @@
 ** Vincle structures
 */
 
-#include "../../include/my.h"
+#include "../../include/engine_utils.h"
 
 static sfIntRect create_rect(sfTexture *texture,
     size_t x_tiles, size_t y_tiles)

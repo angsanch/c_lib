@@ -5,9 +5,7 @@
 ** Parse data into struct
 */
 
-#include <stdlib.h>
-#include "../../include/my_printf.h"
-#include "../../include/my.h"
+#include "../../include/my_printf_utils.h"
 
 static char flags_called(char const *format, parameter_t *p, int i)
 {

@@ -5,9 +5,7 @@
 ** Useful functions 3
 */
 
-#include "../../include/my.h"
-#include "../../include/my_printf.h"
-#include <stdio.h>
+#include "../../include/my_printf_utils.h"
 
 void set_base(char specifier, char *base)
 {

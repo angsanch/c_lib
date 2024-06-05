@@ -5,11 +5,7 @@
 ** general function for my_printf
 */
 
-#include <stdarg.h>
-#include <stdlib.h>
-#include "../../include/my_printf.h"
-#include "../../include/my.h"
-#include <stdio.h>
+#include "../../include/my_printf_utils.h"
 
 char const *specifiers = "diuoxXfFeEgGaAcspn%";
 char *(*param_str[])(parameter_t *param, va_list *ap, int n) = {
