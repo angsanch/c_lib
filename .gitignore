@@ -4,6 +4,7 @@
 *.a
 \#*\#
 *~
+.vscode
 
 include/basic.h
 include/engine.h
