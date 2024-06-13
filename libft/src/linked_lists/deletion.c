@@ -12,7 +12,7 @@
 
 #include "../../include/linked_list_utils.h"
 
-void delete_elem(l_elem_t *e, void(*del)(void *))
+void delete_elem(t_elem *e, void(*del)(void *))
 {
     if (e == NULL)
         return;
@@ -21,16 +21,16 @@ void delete_elem(l_elem_t *e, void(*del)(void *))
     e->content = NULL;
 }
 
-void destroy_elem(l_elem_t *e, void(*del)(void *))
+void destroy_elem(t_elem *e, void(*del)(void *))
 {
     delete_elem(e, del);
     free(e);
 }
 
-void list_delete(l_list_t *l)
+void list_delete(t_list *l)
 {
     size_t i = 0;
-    l_elem_t *current;
+    t_elem *current;
 
     if (l == NULL)
         return;
@@ -45,7 +45,7 @@ void list_delete(l_list_t *l)
     l->del = NULL;
 }
 
-l_list_t *list_destroy(l_list_t *l)
+t_list *list_destroy(t_list *l)
 {
     list_delete(l);
     free(l);

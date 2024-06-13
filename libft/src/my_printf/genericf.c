@@ -13,7 +13,7 @@
 #include "../../include/my_printf_utils.h"
 
 char const *specifiers = "diuoxXfFeEgGaAcspn%";
-char *(*param_str[])(parameter_t *param, va_list *ap, int n) = {
+char *(*param_str[])(t_parameter *param, va_list *ap, int n) = {
     &signed_decimal_integer, &signed_decimal_integer,
     &unsigned_decimal_integer, &unsigned_decimal_integer,
     &unsigned_decimal_integer, &unsigned_decimal_integer,
@@ -28,10 +28,10 @@ char *(*param_str[])(parameter_t *param, va_list *ap, int n) = {
 
 static void list_destroy_param(void *p)
 {
-    destroy_param((parameter_t *)p);
+    destroy_param((t_parameter *)p);
 }
 
-char *string_parameter_t(parameter_t *param, va_list *ap, int *n)
+char *string_t_parameter(t_parameter *param, va_list *ap, int *n)
 {
     int index = my_strchr_index(specifiers, param->specifier);
     char *str;
@@ -49,11 +49,11 @@ char *string_parameter_t(parameter_t *param, va_list *ap, int *n)
     return (str);
 }
 
-static l_list_t *parse_format(char const *format, va_list *ap, int *n)
+static t_list *parse_format(char const *format, va_list *ap, int *n)
 {
     int i = 0;
-    l_list_t *params = list_create(&list_destroy_param);
-    parameter_t *new;
+    t_list *params = list_create(&list_destroy_param);
+    t_parameter *new;
 
     if (params == NULL)
         return (NULL);
@@ -63,22 +63,22 @@ static l_list_t *parse_format(char const *format, va_list *ap, int *n)
             *n += 1;
             continue;
         }
-        new = parse_parameter_t(format, &i);
+        new = parse_parameter(format, &i);
         if (new == NULL || !list_append(params, new))
             return (list_destroy(params));
-        new->str = string_parameter_t(new, ap, n);
+        new->str = string_t_parameter(new, ap, n);
         if (new->str == NULL)
             return (list_destroy(params));
     }
     return (params);
 }
 
-void prepare_result(char *result, l_list_t *params, char const *format)
+void prepare_result(char *result, t_list *params, char const *format)
 {
     int i = 0;
     int n = 0;
     int len;
-    parameter_t *p;
+    t_parameter *p;
 
     while (format[i]){
         if (format[i] != '%' && format[i]){
@@ -100,7 +100,7 @@ void prepare_result(char *result, l_list_t *params, char const *format)
 char *genericf(char const *format, va_list *ap)
 {
     int n = 0;
-    l_list_t *params = parse_format(format, ap, &n);
+    t_list *params = parse_format(format, ap, &n);
     char *result = malloc(sizeof(char) * (n + 1));
 
     if (params == NULL)

@@ -12,7 +12,7 @@
 
 #include "../../include/linked_list_utils.h"
 
-void initialize_elem(l_elem_t *e, void *content)
+void initialize_elem(t_elem *e, void *content)
 {
     if (e == NULL)
         return;
@@ -20,24 +20,24 @@ void initialize_elem(l_elem_t *e, void *content)
     e->content = content;
 }
 
-l_elem_t *create_elem(void *content)
+t_elem *create_elem(void *content)
 {
-    l_elem_t *e = malloc(sizeof(l_elem_t) * 1);
+    t_elem *e = malloc(sizeof(t_elem) * 1);
 
     initialize_elem(e, content);
     return (e);
 }
 
-void list_initialize(l_list_t *l, void(*del)(void *))
+void list_initialize(t_list *l, void(*del)(void *))
 {
     l->len = 0;
     l->first = NULL;
     l->del = del;
 }
 
-l_list_t *list_create(void(*del)(void *))
+t_list *list_create(void(*del)(void *))
 {
-    l_list_t *l = malloc(sizeof(l_list_t) * 1);
+    t_list *l = malloc(sizeof(t_list) * 1);
 
     if (l == NULL)
         return (NULL);

@@ -12,9 +12,9 @@
 
 #include "../../include/linked_list_utils.h"
 
-size_t list_len(l_list_t *l)
+size_t list_len(t_list *l)
 {
-    l_elem_t *e = l->first;
+    t_elem *e = l->first;
     size_t i = 0;
 
     while (e != NULL)
@@ -22,9 +22,9 @@ size_t list_len(l_list_t *l)
     return (i);
 }
 
-l_elem_t *list_get_last(l_list_t *l)
+t_elem *list_get_last(t_list *l)
 {
-    l_elem_t *e = l->first;
+    t_elem *e = l->first;
 
     if (e == NULL)
         return (NULL);
@@ -33,18 +33,18 @@ l_elem_t *list_get_last(l_list_t *l)
     return (e);
 }
 
-void list_pop_first(l_list_t *l)
+void list_pop_first(t_list *l)
 {
-    l_elem_t *e = l->first;
+    t_elem *e = l->first;
 
     l->first = e->next;
     destroy_elem(e, l->del);
     l->len --;
 }
 
-l_elem_t *list_get_index_elem(l_list_t *l, size_t index)
+t_elem *list_get_index_elem(t_list *l, size_t index)
 {
-    l_elem_t *e = l->first;
+    t_elem *e = l->first;
     size_t i = 0;
 
     while (e != NULL && i < index){
@@ -54,9 +54,9 @@ l_elem_t *list_get_index_elem(l_list_t *l, size_t index)
     return (e);
 }
 
-void *list_get_index(l_list_t *l, size_t index)
+void *list_get_index(t_list *l, size_t index)
 {
-    l_elem_t *e = list_get_index_elem(l, index);
+    t_elem *e = list_get_index_elem(l, index);
 
     if (e == NULL)
         return (NULL);

@@ -12,7 +12,7 @@
 
 #include "../../include/basic_utils.h"
 
-static size_t find_next_start(splited_t *spl)
+static size_t find_next_start(t_splited *spl)
 {
     size_t i = 0;
 
@@ -24,7 +24,7 @@ static size_t find_next_start(splited_t *spl)
     return (i);
 }
 
-static ssize_t find_next_end(splited_t *spl)
+static ssize_t find_next_end(t_splited *spl)
 {
     ssize_t i = 0;
     char l;
@@ -45,7 +45,7 @@ static ssize_t find_next_end(splited_t *spl)
     return ((spl->on_block) ? -1 : i);
 }
 
-static int word_count(splited_t *spl)
+static int word_count(t_splited *spl)
 {
     int i = 0;
     ssize_t end;
@@ -87,7 +87,7 @@ void copy_without_quotations(char *dst, char const *src, size_t n)
     dst[d] = '\0';
 }
 
-static void *delete_splited_t(splited_t *spl, int delete_result)
+static void *delete_t_splited(t_splited *spl, int delete_result)
 {
     if (spl == NULL)
         return (NULL);
@@ -96,9 +96,9 @@ static void *delete_splited_t(splited_t *spl, int delete_result)
     return (NULL);
 }
 
-static int init_splited_t(splited_t *spl, char const *s, char const *separtrs)
+static int init_t_splited(t_splited *spl, char const *s, char const *separtrs)
 {
-    my_memset(spl, 0, sizeof(splited_t));
+    my_memset(spl, 0, sizeof(t_splited));
     spl->separators = separtrs;
     spl->str = s;
     spl->word_count = word_count(spl);
@@ -115,20 +115,20 @@ char **my_coolersplit(char const *s, char const *separators)
 {
     int i = 0;
     size_t end;
-    splited_t spl;
+    t_splited spl;
 
-    if (!init_splited_t(&spl, s, separators))
+    if (!init_t_splited(&spl, s, separators))
         return (NULL);
     while (i < spl.word_count){
         spl.offset += find_next_start(&spl);
         end = find_next_end(&spl);
         spl.result[i] = malloc(sizeof(char) * (end + 1));
         if (spl.result[i] == NULL)
-            return (delete_splited_t(&spl, 1));
+            return (delete_t_splited(&spl, 1));
         copy_without_quotations(spl.result[i], spl.str + spl.offset, end);
         i ++;
         spl.offset += end;
     }
-    delete_splited_t(&spl, 0);
+    delete_t_splited(&spl, 0);
     return (spl.result);
 }

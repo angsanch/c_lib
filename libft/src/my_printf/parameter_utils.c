@@ -12,7 +12,7 @@
 
 #include "../../include/my_printf_utils.h"
 
-static char flags_called(char const *format, parameter_t *p, int i)
+static char flags_called(char const *format, t_parameter *p, int i)
 {
     int index = my_strchr_index("-+ #0", format[i]);
 
@@ -25,7 +25,7 @@ static char flags_called(char const *format, parameter_t *p, int i)
     return (i);
 }
 
-static char width_called(char const *format, parameter_t *p, int i)
+static char width_called(char const *format, t_parameter *p, int i)
 {
     if (format[i] == '*'){
         p->width = -1;
@@ -37,7 +37,7 @@ static char width_called(char const *format, parameter_t *p, int i)
     return (my_intlen(p->width) + i);
 }
 
-static int precision_called(char const *format, parameter_t *p, int i)
+static int precision_called(char const *format, t_parameter *p, int i)
 {
     if (format[i] != '.')
         return (i);
@@ -54,7 +54,7 @@ static int precision_called(char const *format, parameter_t *p, int i)
     return (my_intlen(p->precision) + i);
 }
 
-static int length_called(char const *format, parameter_t *p, int i)
+static int length_called(char const *format, t_parameter *p, int i)
 {
     p->length = my_strchr_index("hhlljztL", format[i]) + 1;
     if (p->length == 0)
@@ -77,10 +77,10 @@ static int length_called(char const *format, parameter_t *p, int i)
     return (i + 1);
 }
 
-parameter_t *create_param(void)
+t_parameter *create_param(void)
 {
     int i = 0;
-    parameter_t *p = malloc(sizeof(parameter_t) * 1);
+    t_parameter *p = malloc(sizeof(t_parameter) * 1);
 
     if (p == NULL)
         return (NULL);
@@ -96,13 +96,13 @@ parameter_t *create_param(void)
     return (p);
 }
 
-void destroy_param(parameter_t *p)
+void destroy_param(t_parameter *p)
 {
     free(p->str);
     free(p);
 }
 
-int param_eq(parameter_t *p1, parameter_t *p2)
+int param_eq(t_parameter *p1, t_parameter *p2)
 {
     int i = 0;
 
@@ -122,9 +122,9 @@ int param_eq(parameter_t *p1, parameter_t *p2)
     return (1);
 }
 
-parameter_t *parse_parameter_t(char const *format, int *i)
+t_parameter *parse_parameter(char const *format, int *i)
 {
-    parameter_t *data = create_param();
+    t_parameter *data = create_param();
 
     if (data == NULL)
         return (NULL);

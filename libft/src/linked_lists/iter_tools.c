@@ -12,11 +12,11 @@
 
 #include "../../include/linked_list_utils.h"
 
-void **list_export(l_list_t *l, void *(*transform)(void *))
+void **list_export(t_list *l, void *(*transform)(void *))
 {
     void **export;
     size_t i = 0;
-    l_elem_t *e;
+    t_elem *e;
 
     if (l->len == 0)
         return (NULL);
@@ -36,10 +36,10 @@ void **list_export(l_list_t *l, void *(*transform)(void *))
     return (export);
 }
 
-void list_import(l_list_t *l, void **data)
+void list_import(t_list *l, void **data)
 {
     size_t i = 0;
-    l_elem_t *e = l->first;
+    t_elem *e = l->first;
 
     while (i < l->len){
         e->content = data[i];
@@ -48,10 +48,10 @@ void list_import(l_list_t *l, void **data)
     }
 }
 
-void list_iter(l_list_t *l, void(*func)(void *, void *), void *data)
+void list_iter(t_list *l, void(*func)(void *, void *), void *data)
 {
-    l_elem_t *next = l->first;
-    l_elem_t *e = NULL;
+    t_elem *next = l->first;
+    t_elem *e = NULL;
 
     while (next != NULL){
         e = next;
@@ -60,9 +60,9 @@ void list_iter(l_list_t *l, void(*func)(void *, void *), void *data)
     }
 }
 
-ssize_t list_first_fulfil(l_list_t *l, int(*func)(void *, void *), void *data)
+ssize_t list_first_fulfil(t_list *l, int(*func)(void *, void *), void *data)
 {
-    l_elem_t *e = l->first;
+    t_elem *e = l->first;
     size_t i = 0;
 
     while (e != NULL){
@@ -74,9 +74,9 @@ ssize_t list_first_fulfil(l_list_t *l, int(*func)(void *, void *), void *data)
     return (-1);
 }
 
-size_t list_count_fulfil(l_list_t *l, int(*func)(void *, void *), void *data)
+size_t list_count_fulfil(t_list *l, int(*func)(void *, void *), void *data)
 {
-    l_elem_t *e = l->first;
+    t_elem *e = l->first;
     size_t count = 0;
 
     while (e != NULL){

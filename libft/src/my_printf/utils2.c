@@ -31,7 +31,7 @@ static char *my_strt2str(wchar_t *strt)
     return (str);
 }
 
-static char *get_string(parameter_t *param, va_list *ap)
+static char *get_string(t_parameter *param, va_list *ap)
 {
     char *str;
     char *temp;
@@ -54,7 +54,7 @@ static char *get_string(parameter_t *param, va_list *ap)
     return (str);
 }
 
-char *length_exporter(parameter_t *param, va_list *ap, int n)
+char *length_exporter(t_parameter *param, va_list *ap, int n)
 {
     if (param->length == 0)
         *(va_arg(*ap, int *)) = n;
@@ -75,7 +75,7 @@ char *length_exporter(parameter_t *param, va_list *ap, int n)
     return (my_strdup(""));
 }
 
-char *character_print(parameter_t *param, va_list *ap, int n)
+char *character_print(t_parameter *param, va_list *ap, int n)
 {
     size_t len = 1;
     char *result;
@@ -97,7 +97,7 @@ char *character_print(parameter_t *param, va_list *ap, int n)
     return (result);
 }
 
-static char *complex_string(parameter_t *param, char *str, int len)
+static char *complex_string(t_parameter *param, char *str, int len)
 {
     char *result = malloc(sizeof(char) * (param->width + 1));
 
@@ -114,7 +114,7 @@ static char *complex_string(parameter_t *param, char *str, int len)
     return (result);
 }
 
-char *string_print(parameter_t *param, va_list *ap, int n)
+char *string_print(t_parameter *param, va_list *ap, int n)
 {
     int len;
     char *str;
@@ -136,7 +136,7 @@ char *string_print(parameter_t *param, va_list *ap, int n)
     return (result);
 }
 
-char *pointer_print(parameter_t *param, va_list *ap, int n)
+char *pointer_print(t_parameter *param, va_list *ap, int n)
 {
     unsigned long long int ptr = (unsigned long long int)va_arg(*ap, void *);
     char *parsed_number;
@@ -154,7 +154,7 @@ char *pointer_print(parameter_t *param, va_list *ap, int n)
     return (result);
 }
 
-char *print_percentage(parameter_t *param, va_list *ap, int n)
+char *print_percentage(t_parameter *param, va_list *ap, int n)
 {
     (void)param;
     (void)ap;
