@@ -6,7 +6,7 @@
 #    By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 18:29:06 by angsanch          #+#    #+#              #
-#    Updated: 2024/06/13 18:29:14 by angsanch         ###   ########.fr        #
+#    Updated: 2024/06/13 21:07:31 by angsanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,12 +73,15 @@ BASIC_SOURCE = src/basic/my_strupcase.c \
 			src/basic/my_strreplace.c \
 
 
-PRINTF_SOURCE = src/my_printf/genericf.c \
-			src/my_printf/f_functions.c \
-			src/my_printf/parameter_utils.c \
-			src/my_printf/utils1.c \
-			src/my_printf/utils2.c \
-			src/my_printf/utils3.c \
+PRINTF_SOURCE = src/ft_printf/args.c \
+			src/ft_printf/f_functions.c \
+			src/ft_printf/genericf.c \
+			src/ft_printf/integers.c \
+			src/ft_printf/integer_tools.c \
+			src/ft_printf/parameter_utils.c \
+			src/ft_printf/parse_parameter.c \
+			src/ft_printf/simple.c \
+			src/ft_printf/strings.c \
 
 
 LINKED_SOURCE = src/linked_lists/creation.c \
@@ -91,7 +94,7 @@ LINKED_SOURCE = src/linked_lists/creation.c \
 
 C_FILES =
 
-HEADERS = include/macros.h
+HEADERS =
 
 ifeq ($(COMPILE_BASIC), true)
 	C_FILES += $(BASIC_SOURCE)
