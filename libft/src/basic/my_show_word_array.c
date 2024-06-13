@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2023
-** my_show_word_array.c
-** File description:
-** Print string array
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_show_word_array.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:46:39 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:46:39 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../include/basic_utils.h"
 

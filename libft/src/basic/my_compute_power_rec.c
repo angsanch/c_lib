@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2023
-** my_compute_power_rec.c
-** File description:
-** Powers recursing
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_compute_power_rec.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:46:18 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:46:18 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 int my_compute_power_rec(int nb, int p)
 {

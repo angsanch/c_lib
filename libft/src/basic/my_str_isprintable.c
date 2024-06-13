@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2023
-** my_str_isprintable.c
-** File description:
-** All printable string
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_str_isprintable.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:46:44 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:46:44 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <stdlib.h>
 

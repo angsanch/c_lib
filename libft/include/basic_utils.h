@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2024
-** basic_utils.h
-** File description:
-** Utils for basics
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   basic_utils.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:49:13 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:49:13 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef BASIC_UTILS_H_
     #define BASIC_UTILS_H_

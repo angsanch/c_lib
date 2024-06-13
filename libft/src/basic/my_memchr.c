@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2024
-** my_memchr.c
-** File description:
-** Find chars in memory
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:46:25 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:46:25 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 int my_memchr_index(const void *m, int c, int len)
 {

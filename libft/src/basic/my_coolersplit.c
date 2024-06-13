@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2024
-** my_coolersplit.c
-** File description:
-** im doing this drunk
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_coolersplit.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:46:19 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:46:19 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../include/basic_utils.h"
 

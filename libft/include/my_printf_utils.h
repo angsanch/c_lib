@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2023
-** my_printf.h
-** File description:
-** Printf
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_printf_utils.h                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:49:17 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:49:22 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef MY_PRINTF_UTILS_H_
     #define MY_PRINTF_UTILS_H_

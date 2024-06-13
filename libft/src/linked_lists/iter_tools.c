@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2023
-** iter_tools.c
-** File description:
-** Iterating the list
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   iter_tools.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:45:50 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:45:50 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../include/linked_list_utils.h"
 

@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2024
-** linked_lists.h
-** File description:
-** linked lists for external use
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   linked_list.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:49:13 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:49:13 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef LINKED_LIST_H_
     #define LINKED_LIST_H_

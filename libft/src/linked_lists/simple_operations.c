@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2023
-** simple_operations.c
-** File description:
-** Simple operations to the list
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   simple_operations.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:45:52 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:45:52 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../include/linked_list_utils.h"
 

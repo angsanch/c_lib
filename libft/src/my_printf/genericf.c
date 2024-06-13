@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2023
-** genericf.c
-** File description:
-** general function for my_printf
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   genericf.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:44:54 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:45:04 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../include/my_printf_utils.h"
 

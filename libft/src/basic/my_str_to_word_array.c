@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2023
-** my_str_to_word_array.c
-** File description:
-** Word split
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_str_to_word_array.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:46:51 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:46:51 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../include/basic_utils.h"
 

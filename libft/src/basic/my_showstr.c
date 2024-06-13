@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2023
-** my_showstr.c
-** File description:
-** Print unprintable as hexadecimal
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_showstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:46:38 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:46:38 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../include/basic_utils.h"
 

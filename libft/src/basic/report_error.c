@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2024
-** report_error.c
-** File description:
-** To make onliners
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   report_error.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:47:03 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:47:09 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../include/basic_utils.h"
 

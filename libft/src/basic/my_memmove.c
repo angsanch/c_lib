@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2024
-** my_memmove.c
-** File description:
-** Move overlaping memory
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:46:28 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:46:28 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../include/basic_utils.h"
 

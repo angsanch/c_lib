@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2023
-** linked_lists_utils.h
-** File description:
-** Linked list utils
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   linked_list_utils.h                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:49:14 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:49:14 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef LINKED_LIST_UTILS_H_
     #define LINKED_LIST_UTILS_H_

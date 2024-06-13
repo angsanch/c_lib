@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2023
-** parse_parameter_t.c
-** File description:
-** Parse data into struct
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parameter_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:45:10 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:45:10 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../include/my_printf_utils.h"
 

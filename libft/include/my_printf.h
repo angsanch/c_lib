@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2024
-** my_printf.h
-** File description:
-** my_printf for external use
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:49:16 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:49:16 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef MY_PRINTF_H_
     #define MY_PRINTF_H_

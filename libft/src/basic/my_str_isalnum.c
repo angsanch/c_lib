@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2023
-** my_str_isalnum.c
-** File description:
-** All alphanumeric string
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_str_isalnum.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:46:42 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:46:42 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../include/basic_utils.h"
 

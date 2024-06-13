@@ -1,9 +1,14 @@
-/*
-** EPITECH PROJECT, 2023
-** my_getnbr_base.c
-** File description:
-** Strings to numbers
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_getnbr_base.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/13 18:46:21 by angsanch          #+#    #+#             */
+/*   Updated: 2024/06/13 18:46:21 by angsanch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../include/basic_utils.h"
 
