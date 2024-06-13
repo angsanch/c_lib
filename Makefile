@@ -1,9 +1,14 @@
-##
-## EPITECH PROJECT, 2023
-## Makefile
-## File description:
-## Make cat
-##
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: angsanch <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/06/13 17:29:25 by angsanch          #+#    #+#              #
+#    Updated: 2024/06/13 17:36:19 by angsanch         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 CC=gcc
 
@@ -13,24 +18,26 @@ C_FILES =
 
 O_FILES = $(C_FILES:.c=.o)
 
+LIB = libft/libft.a
+
 NAME=
 
-$(NAME): lib/libmy.a $(O_FILES)
-	$(CC) $(CFLAGS) -o $(NAME) $(O_FILES) lib/libmy.a
+$(NAME): $(LIB) $(O_FILES)
+	$(CC) $(CFLAGS) -o $(NAME) $(O_FILES) $(LIB)
 
 all: $(NAME)
 
 clean:
-	make -C lib/my clean
+	make -C libft clean
 	rm -f $(O_FILES) test_$(NAME)
 
 fclean: clean
-	make -C lib/my fclean
+	make -C libft fclean
 	rm -f $(NAME)
 
-lib/libmy.a:
-	make -C lib/my
+$(LIB):
+	make -C libft
 
 re: fclean all
 
-.PHONY: all clean fclean re lib/libmy.a
+.PHONY: all clean fclean re
