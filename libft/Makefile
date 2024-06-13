@@ -1,14 +1,18 @@
-##
-## EPITECH PROJECT, 2023
-## Makefile
-## File description:
-## Make library
-##
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/06/13 18:29:06 by angsanch          #+#    #+#              #
+#    Updated: 2024/06/13 18:29:14 by angsanch         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 COMPILE_BASIC = true
 COMPILE_PRINTF = true
 COMPILE_LINKED = true
-COMPILE_ENGINE = true
 
 CC=gcc
 
@@ -85,19 +89,6 @@ LINKED_SOURCE = src/linked_lists/creation.c \
 			src/linked_lists/sort.c \
 
 
-ENGINE_SOURCE = src/engine/creation.c \
-			src/engine/destruction.c \
-			src/engine/deletion.c \
-			src/engine/ticks.c \
-			src/engine/displayer.c \
-			src/engine/finder.c \
-			src/engine/sprite_helper.c \
-			src/engine/controller.c \
-			src/engine/sprite_creation.c \
-			src/engine/sprite_creation2.c \
-			src/engine/collisions.c \
-			src/engine/buttons.c \
-
 C_FILES =
 
 HEADERS = include/macros.h
@@ -114,20 +105,14 @@ ifeq ($(COMPILE_PRINTF), true)
 	C_FILES += $(PRINTF_SOURCE)
 	HEADERS += include/my_printf.h
 endif
-ifeq ($(COMPILE_ENGINE), true)
-	C_FILES += $(ENGINE_SOURCE)
-	HEADERS += include/engine.h
-endif
 
 O_FILES = $(C_FILES:.c=.o)
-
-ASSETS = assets/font.ttf \
 
 ASSETS_O = $(ASSETS:=.o)
 
 EXTERN_H = $(subst include/,../../include/,$(HEADERS))
 
-NAME=libmy.a
+NAME=libft.a
 
 $(NAME): $(O_FILES) $(ASSETS_O)
 	ar -rsc $(NAME) $(O_FILES) $(ASSETS_O)
@@ -147,10 +132,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-$(ASSETS_O): $(ASSETS)
-	xxd -i "$<" | gcc -x c - -c -o "$@"
-
-$(ASSETS): ;
 
 .PHONY: all clean fclean re
