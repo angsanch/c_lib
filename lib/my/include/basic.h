@@ -18,15 +18,10 @@ char *convert_base(char const *nbr,
     char const *base_from, char const *base_to);
 char *get_next_line(int fd);
 void *my_calloc(size_t count, size_t size);
-int my_compute_power_rec(int nb, int p);
-int my_compute_square_root(int nb);
-int my_find_prime_sup(int nb);
 int my_intlen_base(int nb, int base_len);
 int my_getnbr_base(char const *str, char const *base);
 int my_intlen(int nb);
 int my_getnbr(char const *str);
-void my_isneg(int n);
-int my_is_prime(int nb);
 int my_memcmp(const void *s1, const void *s2, size_t n);
 int my_memchr_index(const void *m, int c, int len);
 void *my_memcpy(void *dest, const void *src, size_t n);
@@ -42,8 +37,6 @@ void my_revmem(void *str, size_t size);
 char *my_revstr(char *str);
 void my_showmem(char const *str, size_t size);
 void my_showstr(char const *str);
-void my_show_word_array(char *const *tab);
-void my_sort_int_array(int *array, size_t size);
 char **free_string_array(char **result);
 size_t get_pointer_array_len(void *arr_in);
 char **my_split(char const *s, char c);
@@ -79,10 +72,8 @@ int my_strncmp(char const *s1, char const *s2, size_t n);
 char *my_strncpy(char *dest, char const *src, size_t n);
 char *my_strreplace(char *base, char *key, char *replace);
 char *my_strstr(char *str, char const *to_find);
-char **my_str_to_word_array(char const *str);
 void my_to_upper(char *chr);
 char *my_strupcase(char *str);
-void my_swap(int *a, int *b);
 int report_error(char *str, int response);
 
 #endif
