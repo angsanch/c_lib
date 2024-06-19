@@ -12,13 +12,15 @@
 
 #include "../../include/basic_utils.h"
 
-char *my_strdup(char const *src)
+char	*my_strdup(char const *src)
 {
-    size_t len = my_strlen(src) + 1;
-    char *result = malloc(sizeof(char) * len);
+	size_t	len;
+	char	*result;
 
-    if (result == NULL)
-        return (NULL);
-    my_strcpy(result, src);
-    return (result);
+	len = my_strlen(src) + 1;
+	result = malloc(sizeof(char) * len);
+	if (result == NULL)
+		return (NULL);
+	my_strcpy(result, src);
+	return (result);
 }

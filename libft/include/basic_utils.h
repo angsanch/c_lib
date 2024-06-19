@@ -34,6 +34,13 @@ typedef struct file_buffer_t_container
 	ssize_t	len;
 }	t_file_buffer;
 
+typedef struct coolersplit_sizes {
+	size_t	base_len;
+	size_t	key_len;
+	size_t	repl_len;
+	size_t	coins;
+} t_sizes;
+
 typedef struct coolersplit_context
 {
 	char const	*str;

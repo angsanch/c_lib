@@ -12,15 +12,17 @@
 
 #include <stdlib.h>
 
-char *my_strncpy(char *dest, char const *src, size_t n)
+char	*my_strncpy(char *dest, char const *src, size_t n)
 {
-    size_t i = 0;
+	size_t	i;
 
-    while (i < n){
-        dest[i] = src[i];
-        if (src[i] == 0)
-            break;
-        i ++;
-    }
-    return (dest);
+	i = 0;
+	while (i < n)
+	{
+		dest[i] = src[i];
+		if (src[i] == 0)
+			break ;
+		i ++;
+	}
+	return (dest);
 }

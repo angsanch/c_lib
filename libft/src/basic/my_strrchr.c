@@ -12,15 +12,21 @@
 
 #include <stdlib.h>
 
-char *my_strrchr(char const *str, char c)
+char	*my_strrchr(char const *str, char c)
 {
-    size_t i = 0;
-    size_t last = 0;
+	size_t	i;
+	size_t	last;
 
-    while (str[i] != '\0'){
-        if (str[i] == c)
-            last = i;
-        i ++;
-    }
-    return ((str[last] == c) ? (char *)(str + last) : NULL);
+	i = 0;
+	last = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == c)
+			last = i;
+		i ++;
+	}
+	if (str[last] == c)
+		return ((char *)(str + last));
+	else
+		return (NULL);
 }

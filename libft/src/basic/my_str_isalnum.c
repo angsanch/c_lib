@@ -12,19 +12,21 @@
 
 #include "../../include/basic_utils.h"
 
-int my_isalnum(char c)
+int	my_isalnum(char c)
 {
-    return (my_isalpha(c) || my_isnumeric(c));
+	return (my_isalpha(c) || my_isnumeric(c));
 }
 
-int my_str_isalnum(char const *str)
+int	my_str_isalnum(char const *str)
 {
-    size_t i = 0;
+	size_t	i;
 
-    while (str[i] != 0){
-        if (!my_isalnum(str[i]))
-            return (0);
-        i ++;
-    }
-    return (1);
+	i = 0;
+	while (str[i] != 0)
+	{
+		if (!my_isalnum(str[i]))
+			return (0);
+		i ++;
+	}
+	return (1);
 }

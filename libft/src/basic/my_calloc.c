@@ -12,16 +12,17 @@
 
 #include "../../include/basic_utils.h"
 
-void *my_calloc(size_t count, size_t size)
+void	*my_calloc(size_t count, size_t size)
 {
-    size_t space = count * size;
-    void *result;
+	size_t	space;
+	void	*result;
 
-    if (SIZE_MAX == count || SIZE_MAX == size)
-        return (NULL);
-    result = malloc(space);
-    if (result == NULL)
-        return (NULL);
-    my_memset(result, 0, space);
-    return (result);
+	if (SIZE_MAX == count || SIZE_MAX == size)
+		return (NULL);
+	space = count * size;
+	result = malloc(space);
+	if (result == NULL)
+		return (NULL);
+	my_memset(result, 0, space);
+	return (result);
 }

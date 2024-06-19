@@ -12,19 +12,21 @@
 
 #include <stdlib.h>
 
-int my_isprintable(char c)
+int	my_isprintable(char c)
 {
-    return (c >= ' ' && c <= '~');
+	return (c >= ' ' && c <= '~');
 }
 
-int my_str_isprintable(char const *str)
+int	my_str_isprintable(char const *str)
 {
-    size_t i = 0;
+	size_t	i;
 
-    while (str[i] != 0){
-        if (!my_isprintable(str[i]))
-            return (0);
-        i ++;
-    }
-    return (1);
+	i = 0;
+	while (str[i] != 0)
+	{
+		if (!my_isprintable(str[i]))
+			return (0);
+		i ++;
+	}
+	return (1);
 }

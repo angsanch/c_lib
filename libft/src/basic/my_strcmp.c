@@ -12,14 +12,16 @@
 
 #include <stdlib.h>
 
-int my_strcmp(char const *s1, char const *s2)
+int	my_strcmp(char const *s1, char const *s2)
 {
-    size_t i = 0;
+	size_t	i;
 
-    while (s1[i] == s2[i]){
-        if (s1[i] == 0)
-            break;
-        i ++;
-    }
-    return (s1[i] - s2[i]);
+	i = 0;
+	while (s1[i] == s2[i])
+	{
+		if (s1[i] == 0)
+			break ;
+		i ++;
+	}
+	return (s1[i] - s2[i]);
 }

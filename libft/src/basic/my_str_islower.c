@@ -12,19 +12,21 @@
 
 #include <stdlib.h>
 
-int my_islower(char c)
+int	my_islower(char c)
 {
-    return (c >= 'a' && c <= 'z');
+	return (c >= 'a' && c <= 'z');
 }
 
-int my_str_islower(char const *str)
+int	my_str_islower(char const *str)
 {
-    size_t i = 0;
+	size_t	i;
 
-    while (str[i] != 0){
-        if (!my_islower(str[i]))
-            return (0);
-        i ++;
-    }
-    return (1);
+	i = 0;
+	while (str[i] != 0)
+	{
+		if (!my_islower(str[i]))
+			return (0);
+		i ++;
+	}
+	return (1);
 }

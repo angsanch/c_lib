@@ -12,86 +12,101 @@
 
 #include "../../include/basic_utils.h"
 
-static char *find_next_start(const char *str, char delimiter)
+static char	*find_next_start(const char *str, char delimiter)
 {
-    size_t i = 0;
+	size_t	i;
 
-    while (str[i] != 0){
-        if (str[i] != delimiter)
-            break;
-        i ++;
-    }
-    return ((char *)str + i);
+	i = 0;
+	while (str[i] != 0)
+	{
+		if (str[i] != delimiter)
+			break ;
+		i ++;
+	}
+	return ((char *)str + i);
 }
 
-static char *find_next_end(const char *str, char delimiter)
+static char	*find_next_end(const char *str, char delimiter)
 {
-    size_t i = 0;
+	size_t	i;
 
-    while (str[i] != 0){
-        if (str[i] == delimiter)
-            break;
-        i ++;
-    }
-    return ((char *)str + i);
+	i = 0;
+	while (str[i] != 0)
+	{
+		if (str[i] == delimiter)
+			break ;
+		i ++;
+	}
+	return ((char *)str + i);
 }
 
-static int word_count(const char *str, char delimiter)
+static int	word_count(const char *str, char delimiter)
 {
-    int i = 0;
+	int	i;
 
-    while (*str != 0){
-        str = find_next_start(str, delimiter);
-        str = find_next_end(str, delimiter);
-        if (*str != 0 || *(str - 1) != delimiter)
-            i ++;
-    }
-    return (i);
+	i = 0;
+	while (*str != 0)
+	{
+		str = find_next_start(str, delimiter);
+		str = find_next_end(str, delimiter);
+		if (*str != 0 || *(str - 1) != delimiter)
+			i ++;
+	}
+	return (i);
 }
 
-char **free_string_array(char **result)
+char	**free_string_array(char **result)
 {
-    int i = 0;
+	int	i;
 
-    if (result == NULL)
-        return (NULL);
-    while (result[i]){
-        free(result[i]);
-        i ++;
-    }
-    free(result);
-    return (NULL);
+	i = 0;
+	if (result == NULL)
+		return (NULL);
+	while (result[i])
+	{
+		free(result[i]);
+		i ++;
+	}
+	free(result);
+	return (NULL);
 }
 
-char **my_split(char const *s, char c)
+char	**my_split(char const *s, char c)
 {
-    int i = 0;
-    int n = word_count(s, c);
-    char **result = malloc(sizeof(char *) * (n + 1));
-    char *end;
+	int		i;
+	int		n;
+	char	**result;
+	char	*end;
 
-    if (result == NULL)
-        return (NULL);
-    my_memset(result, 0, sizeof(char *) * (n + 1));
-    while (i < n){
-        s = find_next_start(s, c);
-        end = find_next_end(s, c);
-        result[i] = malloc(sizeof(char) * (end - s + 1));
-        if (result[i] == NULL)
-            return (free_string_array(result));
-        my_memcpy(result[i], s, end - s);
-        result[i][end - s] = 0;
-        i ++;
-        s = end;
-    }
-    return (result);
+	i = 0;
+	n = word_count(s, c);
+	result = malloc(sizeof(char *) * (n + 1));
+	if (result == NULL)
+		return (NULL);
+	my_memset(result, 0, sizeof(char *) * (n + 1));
+	while (i < n)
+	{
+		s = find_next_start(s, c);
+		end = find_next_end(s, c);
+		result[i] = malloc(sizeof(char) * (end - s + 1));
+		if (result[i] == NULL)
+			return (free_string_array(result));
+		my_memcpy(result[i], s, end - s);
+		result[i][end - s] = 0;
+		i ++;
+		s = end;
+	}
+	return (result);
 }
 
-size_t get_pointer_array_len(void *arr_in)
+size_t	get_pointer_array_len(void *arr_in)
 {
-    size_t i = 0;
-    void **arr = arr_in;
+	size_t	i;
+	void	**arr;
 
-    for (; arr[i]; i++);
-    return (i);
+	i = 0;
+	arr = arr_in;
+	while (arr[i])
+		i ++;
+	return (i);
 }

@@ -10,14 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int my_compute_square_root(int nb)
+int	my_compute_square_root(int nb)
 {
-    int sq = 1;
+	int	sq;
 
-    while (sq <= nb / sq){
-        if (sq * sq == nb)
-            return (sq);
-        sq ++;
-    }
-    return (0);
+	sq = 1;
+	while (sq <= nb / sq)
+	{
+		if (sq * sq == nb)
+			return (sq);
+		sq ++;
+	}
+	return (0);
 }

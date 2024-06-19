@@ -12,14 +12,18 @@
 
 #include "../../include/basic_utils.h"
 
-void my_revmem(void *data, size_t size)
+void	my_revmem(void *data, size_t size)
 {
-    size_t limit = size / 2;
-    size_t i = 0;
-    char *str = data;
+	size_t	limit;
+	size_t	i;
+	char	*str;
 
-    while (i < limit) {
-        swap_chr(str + i, str + size - i - 1);
-        i ++;
-    }
+	limit = size / 2;
+	i = 0;
+	str = data;
+	while (i < limit)
+	{
+		swap_chr(str + i, str + size - i - 1);
+		i ++;
+	}
 }

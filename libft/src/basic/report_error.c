@@ -12,8 +12,8 @@
 
 #include "../../include/basic_utils.h"
 
-int report_error(char *str, int response)
+int	report_error(char *str, int response)
 {
-    write(2, str, my_strlen(str));
-    return (response);
+	write(2, str, my_strlen(str));
+	return (response);
 }

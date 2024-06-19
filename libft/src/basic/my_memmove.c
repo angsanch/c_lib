@@ -12,21 +12,26 @@
 
 #include "../../include/basic_utils.h"
 
-void *my_memmove(void *dst, const void *src, size_t n)
+void	*my_memmove(void *dst, const void *src, size_t n)
 {
-    char *dstchr = dst;
-    const char *srcchr = src;
-    size_t i = 0;
+	char		*dstchr;
+	const char	*srcchr;
+	size_t		i;
 
-    if (src > dst){
-        my_memcpy(dst, src, n);
-        return (dst);
-    }
-    if (dst == src)
-        return (dst);
-    while (i < n){
-        dstchr[n - i - 1] = srcchr[n - i - 1];
-        i ++;
-    }
-    return (dst);
+	dstchr = dst;
+	srcchr = src;
+	i = 0;
+	if (src > dst)
+	{
+		my_memcpy(dst, src, n);
+		return (dst);
+	}
+	if (dst == src)
+		return (dst);
+	while (i < n)
+	{
+		dstchr[n - i - 1] = srcchr[n - i - 1];
+		i ++;
+	}
+	return (dst);
 }

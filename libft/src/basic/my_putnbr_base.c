@@ -12,33 +12,37 @@
 
 #include "../../include/basic_utils.h"
 
-static unsigned int get_divisor(unsigned int nbr, unsigned int base)
+static unsigned int	get_divisor(unsigned int nbr, unsigned int base)
 {
-    unsigned int divisor = 1;
+	unsigned int	divisor;
 
-    while (nbr / base >= divisor)
-        divisor *= base;
-    return (divisor);
+	divisor = 1;
+	while (nbr / base >= divisor)
+		divisor *= base;
+	return (divisor);
 }
 
-int my_putnbr_base(int nbr, char const *base)
+int	my_putnbr_base(int nbr, char const *base)
 {
-    unsigned int n;
-    unsigned int divisor;
-    int len_base = my_strlen(base);
+	unsigned int	n;
+	unsigned int	divisor;
+	int				len_base;
 
-    n = nbr;
-    if (nbr < 0){
-        write(1, "-", 1);
-        n = -nbr;
-    }
-    if (n == 0)
-        write(1, "0", 1);
-    divisor = get_divisor(n, len_base);
-    while (divisor > 0){
-        write(1, &base[n / divisor], 1);
-        n %= divisor;
-        divisor /= len_base;
-    }
-    return (0);
+	len_base = my_strlen(base);
+	n = nbr;
+	if (nbr < 0)
+	{
+		write(1, "-", 1);
+		n = -nbr;
+	}
+	if (n == 0)
+		write(1, "0", 1);
+	divisor = get_divisor(n, len_base);
+	while (divisor > 0)
+	{
+		write(1, &base[n / divisor], 1);
+		n %= divisor;
+		divisor /= len_base;
+	}
+	return (0);
 }

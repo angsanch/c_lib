@@ -12,14 +12,17 @@
 
 #include <stdlib.h>
 
-void *my_memset(void *b, int c, size_t len)
+void	*my_memset(void *b, int c, size_t len)
 {
-    size_t i = 0;
-    char *strint = b;
+	size_t	i;
+	char	*strint;
 
-    while (i < len){
-        strint[i] = c;
-        i ++;
-    }
-    return (b);
+	i = 0;
+	strint = b;
+	while (i < len)
+	{
+		strint[i] = c;
+		i ++;
+	}
+	return (b);
 }

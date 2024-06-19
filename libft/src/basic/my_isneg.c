@@ -12,9 +12,13 @@
 
 #include <unistd.h>
 
-void my_isneg(int n)
+void	my_isneg(int n)
 {
-    char c = (n >= 0) ? 'P' : 'N';
+	char	c;
 
-    write(1, &c, 1);
+	if (n >= 0)
+		c = 'P';
+	else
+		c = 'N';
+	write(1, &c, 1);
 }

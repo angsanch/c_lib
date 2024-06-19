@@ -12,20 +12,24 @@
 
 #include "../../include/basic_utils.h"
 
-char *my_strstr(char *str, char const *to_find)
+char	*my_strstr(char *str, char const *to_find)
 {
-    size_t i = 0;
-    size_t str_len = my_strlen(str);
-    size_t find_len = my_strlen(to_find);
+	size_t	i;
+	size_t	str_len;
+	size_t	find_len;
 
-    if (str_len < find_len)
-        return (0);
-    if (find_len == 0)
-        return (str);
-    while (i < str_len - find_len + 1){
-        if (my_strncmp(str + i, to_find, find_len) == 0)
-            return (str + i);
-        i ++;
-    }
-    return (0);
+	i = 0;
+	str_len = my_strlen(str);
+	find_len = my_strlen(to_find);
+	if (str_len < find_len)
+		return (0);
+	if (find_len == 0)
+		return (str);
+	while (i < str_len - find_len + 1)
+	{
+		if (my_strncmp(str + i, to_find, find_len) == 0)
+			return (str + i);
+		i ++;
+	}
+	return (0);
 }

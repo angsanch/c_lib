@@ -12,19 +12,21 @@
 
 #include <stdlib.h>
 
-void my_to_lower(char *chr)
+void	my_to_lower(char *chr)
 {
-    if (chr[0] >= 'A' && chr[0] <= 'Z')
-        chr[0] += 32;
+	if (chr[0] >= 'A' && chr[0] <= 'Z')
+		chr[0] += 32;
 }
 
-char *my_strlowcase(char *str)
+char	*my_strlowcase(char *str)
 {
-    size_t i = 0;
+	size_t	i;
 
-    while (str[i] != 0){
-        my_to_lower(str + i);
-        i ++;
-    }
-    return (str);
+	i = 0;
+	while (str[i] != 0)
+	{
+		my_to_lower(str + i);
+		i ++;
+	}
+	return (str);
 }

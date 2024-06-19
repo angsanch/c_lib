@@ -12,13 +12,15 @@
 
 #include "../../include/basic_utils.h"
 
-void my_show_word_array(char *const *tab)
+void	my_show_word_array(char *const *tab)
 {
-    size_t i = 0;
+	size_t	i;
 
-    while (tab[i] != 0){
-        my_putstr(tab[i]);
-        my_putchar('\n');
-        i ++;
-    }
+	i = 0;
+	while (tab[i] != 0)
+	{
+		my_putstr(tab[i]);
+		my_putchar('\n');
+		i ++;
+	}
 }

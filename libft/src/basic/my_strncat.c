@@ -12,10 +12,11 @@
 
 #include "../../include/basic_utils.h"
 
-char *my_strncat(char *dest, char const *src, size_t nb)
+char	*my_strncat(char *dest, char const *src, size_t nb)
 {
-    size_t len = my_strlen(dest);
+	size_t	len;
 
-    my_strncpy(dest + len, src, nb);
-    return (dest);
+	len = my_strlen(dest);
+	my_strncpy(dest + len, src, nb);
+	return (dest);
 }

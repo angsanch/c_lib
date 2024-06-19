@@ -12,17 +12,19 @@
 
 #include "../../include/basic_utils.h"
 
-char *my_strcapitalize(char *str)
+char	*my_strcapitalize(char *str)
 {
-    size_t i = 0;
+	size_t	i;
 
-    my_to_upper(str);
-    while (str[i] != 0){
-        i ++;
-        if (my_isalpha(str[i - 1]) || my_isnumeric(str[i - 1]))
-            my_to_lower(str + i);
-        else
-            my_to_upper(str + i);
-    }
-    return (str);
+	i = 0;
+	my_to_upper(str);
+	while (str[i] != 0)
+	{
+		i ++;
+		if (my_isalpha(str[i - 1]) || my_isnumeric(str[i - 1]))
+			my_to_lower(str + i);
+		else
+			my_to_upper(str + i);
+	}
+	return (str);
 }

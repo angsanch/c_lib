@@ -12,23 +12,28 @@
 
 #include "../../include/basic_utils.h"
 
-void swap_chr(char *a, char *b)
+void	swap_chr(char *a, char *b)
 {
-    char c = *a;
+	char	c;
 
-    *a = *b;
-    *b = c;
+	c = *a;
+	*a = *b;
+	*b = c;
 }
 
-char *my_revstr(char *str)
+char	*my_revstr(char *str)
 {
-    int size = my_strlen(str) - 1;
-    int limit = size / 2 + 1;
-    int i = 0;
+	int	size;
+	int	limit;
+	int	i;
 
-    while (i < limit){
-        swap_chr(str + i, str + size - i);
-        i ++;
-    }
-    return (str);
+	size = my_strlen(str) - 1;
+	limit = size / 2 + 1;
+	i = 0;
+	while (i < limit)
+	{
+		swap_chr(str + i, str + size - i);
+		i ++;
+	}
+	return (str);
 }
