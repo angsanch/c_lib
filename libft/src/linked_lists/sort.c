@@ -6,7 +6,7 @@
 /*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 18:45:53 by angsanch          #+#    #+#             */
-/*   Updated: 2024/06/13 18:46:00 by angsanch         ###   ########.fr       */
+/*   Updated: 2024/06/20 00:09:44 by angsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ static void	merge_sort(t_elem **first, size_t size,
 	left_size = size / 2;
 	right_size = size - left_size;
 	end = elem_advance(*first, size);
-	(void)end;
 	if (size == 1)
 		return ;
 	merge_sort(first, left_size, comp);
