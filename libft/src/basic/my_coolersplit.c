@@ -73,44 +73,6 @@ static int	word_count(t_splited *spl)
 	return (i);
 }
 
-void	copy_without_quotations(char *dst, char const *src, size_t n)
-{
-	size_t	d;
-	size_t	s;
-	char	p_block;
-	char	block;
-	char	l;
-
-	d = 0;
-	s = 0;
-	p_block = 0;
-	block = 0;
-	while (s < n)
-	{
-		p_block = block;
-		l = src[s];
-		if (block == 0 && (l == '\'' || l == '\"'))
-		{
-			block = 0;
-			l = 0;
-		}
-		if (p_block == block)
-			dst[d] = src[s];
-		d += p_block == block;
-		s ++;
-	}
-	dst[d] = '\0';
-}
-
-static void	*delete_t_splited(t_splited *spl, int delete_result)
-{
-	if (spl == NULL)
-		return (NULL);
-	if (delete_result)
-		free_string_array(spl->result);
-	return (NULL);
-}
-
 static int	init_t_splited(t_splited *spl, char const *s, char const *separtrs)
 {
 	my_memset(spl, 0, sizeof(t_splited));

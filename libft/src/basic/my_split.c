@@ -55,22 +55,6 @@ static int	word_count(const char *str, char delimiter)
 	return (i);
 }
 
-char	**free_string_array(char **result)
-{
-	int	i;
-
-	i = 0;
-	if (result == NULL)
-		return (NULL);
-	while (result[i])
-	{
-		free(result[i]);
-		i ++;
-	}
-	free(result);
-	return (NULL);
-}
-
 char	**my_split(char const *s, char c)
 {
 	int		i;
@@ -97,16 +81,4 @@ char	**my_split(char const *s, char c)
 		s = end;
 	}
 	return (result);
-}
-
-size_t	get_pointer_array_len(void *arr_in)
-{
-	size_t	i;
-	void	**arr;
-
-	i = 0;
-	arr = arr_in;
-	while (arr[i])
-		i ++;
-	return (i);
 }
