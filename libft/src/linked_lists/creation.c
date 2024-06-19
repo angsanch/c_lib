@@ -12,35 +12,37 @@
 
 #include "../../include/linked_list_utils.h"
 
-void initialize_elem(t_elem *e, void *content)
+void	initialize_elem(t_elem *e, void *content)
 {
-    if (e == NULL)
-        return;
-    e->next = NULL;
-    e->content = content;
+	if (e == NULL)
+		return ;
+	e->next = NULL;
+	e->content = content;
 }
 
-t_elem *create_elem(void *content)
+t_elem	*create_elem(void *content)
 {
-    t_elem *e = malloc(sizeof(t_elem) * 1);
+	t_elem	*e;
 
-    initialize_elem(e, content);
-    return (e);
+	e = malloc(sizeof(t_elem) * 1);
+	initialize_elem(e, content);
+	return (e);
 }
 
-void list_initialize(t_list *l, void(*del)(void *))
+void	list_initialize(t_list *l, void (*del)(void *))
 {
-    l->len = 0;
-    l->first = NULL;
-    l->del = del;
+	l->len = 0;
+	l->first = NULL;
+	l->del = del;
 }
 
-t_list *list_create(void(*del)(void *))
+t_list	*list_create(void (*del)(void *))
 {
-    t_list *l = malloc(sizeof(t_list) * 1);
+	t_list	*l;
 
-    if (l == NULL)
-        return (NULL);
-    list_initialize(l, del);
-    return (l);
+	l = malloc(sizeof(t_list) * 1);
+	if (l == NULL)
+		return (NULL);
+	list_initialize(l, del);
+	return (l);
 }

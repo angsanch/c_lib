@@ -16,6 +16,13 @@
 # include <stdlib.h>
 # include "linked_list.h"
 
+//not necesary but i needed to save lines
+struct s_side_pointers
+{
+	t_elem	*left;
+	t_elem	*right;
+};
+
 void		initialize_elem(t_elem *e, void *content);
 t_elem		*create_elem(void *content);
 void		delete_elem(t_elem *e, void (*del)(void *));
