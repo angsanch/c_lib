@@ -51,7 +51,6 @@ static void merge_sort(l_elem_t **first, size_t size,
     l_elem_t **center;
     l_elem_t *end = elem_advance(*first, size);
 
-    (void)end;
     if (size == 1)
         return;
     merge_sort(first, left_size, comp);
