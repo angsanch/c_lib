@@ -6,7 +6,7 @@
 /*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 18:45:52 by angsanch          #+#    #+#             */
-/*   Updated: 2024/06/13 18:45:52 by angsanch         ###   ########.fr       */
+/*   Updated: 2024/06/20 00:10:50 by angsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ size_t	list_len(t_list *l)
 	e = l->first;
 	i = 0;
 	while (e != NULL)
+	{
 		e = e->next;
+		i ++;
+	}
 	return (i);
 }
 
