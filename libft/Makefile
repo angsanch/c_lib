@@ -6,7 +6,7 @@
 #    By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 18:29:06 by angsanch          #+#    #+#              #
-#    Updated: 2024/06/13 21:07:31 by angsanch         ###   ########.fr        #
+#    Updated: 2024/06/20 03:44:43 by angsanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,15 +106,14 @@ O_FILES = $(C_FILES:.c=.o)
 
 ASSETS_O = $(ASSETS:=.o)
 
-EXTERN_H = $(subst include/,../../include/,$(HEADERS))
+EXTERN_H = $(subst include/,../include/,$(HEADERS))
 
 NAME=libft.a
 
 $(NAME): $(O_FILES) $(ASSETS_O)
 	ar -rsc $(NAME) $(O_FILES) $(ASSETS_O)
-	cp $(NAME) ../
-	mkdir -p ../../include
-	cp $(HEADERS) ../../include
+	mkdir -p ../include
+	cp $(HEADERS) ../include
 
 all: $(NAME)
 
@@ -123,7 +122,6 @@ clean:
 	rm -f $(ASSETS_O)
 
 fclean: clean
-	rm -f ../$(NAME)
 	rm -f $(EXTERN_H)
 	rm -f $(NAME)
 
