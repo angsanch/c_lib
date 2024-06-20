@@ -50,6 +50,7 @@ BASIC_SOURCE = src/basic/my_strupcase.c \
 			src/basic/my_strjoin.c \
 			src/basic/my_calloc.c \
 			src/basic/my_split.c \
+			src/basic/my_coolersplit_utils.c \
 			src/basic/my_coolersplit.c \
 			src/basic/my_memjoin.c \
 			src/basic/my_memchr.c \
@@ -58,6 +59,7 @@ BASIC_SOURCE = src/basic/my_strupcase.c \
 			src/basic/my_revmem.c \
 			src/basic/report_error.c \
 			src/basic/my_strreplace.c \
+			src/basic/pointer_arrays.c \
 
 
 PRINTF_SOURCE = src/my_printf/genericf.c \

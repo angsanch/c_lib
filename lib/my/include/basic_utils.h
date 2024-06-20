@@ -37,4 +37,7 @@ typedef struct coolersplit_context {
     char on_block;
 } splited_t;
 
+void *delete_splited_t(splited_t *spl, int delete_result);
+void copy_without_quotations(char *dst, char const *src, size_t n);
+
 #endif
