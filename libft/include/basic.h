@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   basic.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: angsanch <angsanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 18:49:12 by angsanch          #+#    #+#             */
-/*   Updated: 2024/06/13 18:56:48 by angsanch         ###   ########.fr       */
+/*   Updated: 2024/09/02 01:44:11 by angsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,16 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <stdbool.h>
+# include <limits.h>
 
 char	*convert_base(char const *nbr,
 			char const *base_from, char const *base_to);
 char	*get_next_line(int fd);
+void	gnl_flush(void);
 void	*my_calloc(size_t count, size_t size);
-int		my_intlen_base(int nb, int base_len);
+size_t	my_intlen_base(long long nb, int base_len);
 int		my_getnbr_base(char const *str, char const *base);
-int		my_intlen(int nb);
+size_t	my_intlen(long long nb);
 int		my_getnbr(char const *str);
 int		my_memcmp(const void *s1, const void *s2, size_t n);
 int		my_memchr_index(const void *m, int c, int len);
