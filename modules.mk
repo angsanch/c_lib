@@ -1,0 +1,3 @@
+COMPILE_BASIC = true
+COMPILE_PRINTF = true
+COMPILE_LINKED = true
