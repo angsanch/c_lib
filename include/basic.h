@@ -79,6 +79,7 @@ int		my_strncmp(char const *s1, char const *s2, size_t n);
 char	*my_strncpy(char *dest, char const *src, size_t n);
 char	*my_strreplace(char *base, char *key, char *replace);
 char	*my_strstr(char *str, char const *to_find);
+void	my_strtrim(char *str);
 void	my_to_upper(char *chr);
 char	*my_strupcase(char *str);
 int		report_error(char *str, int response);
