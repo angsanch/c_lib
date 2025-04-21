@@ -6,7 +6,7 @@
 /*   By: angsanch <angsanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 18:49:12 by angsanch          #+#    #+#             */
-/*   Updated: 2024/09/02 01:44:11 by angsanch         ###   ########.fr       */
+/*   Updated: 2025/04/21 21:40:02 by angsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,13 @@ void	my_strtrim(char *str);
 void	my_to_upper(char *chr);
 char	*my_strupcase(char *str);
 int		report_error(char *str, int response);
+
+typedef struct doublepair
+{
+	double	a;
+	double	b;
+}	t_doublepair;
+
+double	my_map(double n, t_doublepair base, t_doublepair new);
 
 #endif

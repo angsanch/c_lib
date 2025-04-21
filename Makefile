@@ -6,7 +6,7 @@
 #    By: angsanch <angsanch@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 18:29:06 by angsanch          #+#    #+#              #
-#    Updated: 2024/10/18 10:46:22 by angsanch         ###   ########.fr        #
+#    Updated: 2025/04/21 21:36:16 by angsanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,7 @@ BASIC_SOURCE = src/basic/my_strupcase.c \
 			src/basic/my_strreplace.c \
 			src/basic/pointer_arrays.c \
 			src/basic/my_strtrim.c \
+			src/basic/my_map.c \
 
 
 PRINTF_SOURCE = src/ft_printf/args.c \
