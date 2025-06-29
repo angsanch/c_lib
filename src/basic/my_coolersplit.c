@@ -6,7 +6,7 @@
 /*   By: angsanch <angsanch@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 18:46:19 by angsanch          #+#    #+#             */
-/*   Updated: 2024/06/13 18:46:19 by angsanch         ###   ########.fr       */
+/*   Updated: 2025/06/30 01:05:26 by angsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ static ssize_t	find_next_end(t_splited *spl)
 		}
 		if (spl->on_block == l)
 			spl->on_block = 0;
-		if (my_strchr(spl->separators, spl->str[spl->offset + i]) && \
-			!spl->on_block)
+		if (my_strchr(spl->separators, spl->str[spl->offset + i])
+			&& !spl->on_block)
 			break ;
 		i ++;
 	}
@@ -66,8 +66,8 @@ static int	word_count(t_splited *spl)
 		if (end < 0)
 			return (-1);
 		spl->offset += end;
-		if (spl->str[spl->offset] != 0 || \
-			!my_strchr(spl->separators, spl->str[spl->offset - 1]))
+		if (spl->str[spl->offset] != 0
+			|| !my_strchr(spl->separators, spl->str[spl->offset - 1]))
 			i ++;
 	}
 	return (i);
