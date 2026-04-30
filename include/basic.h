@@ -6,7 +6,7 @@
 /*   By: angsanch <angsanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 18:49:12 by angsanch          #+#    #+#             */
-/*   Updated: 2025/04/21 21:40:02 by angsanch         ###   ########.fr       */
+/*   Updated: 2026/04/30 02:07:17 by angsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 char	*convert_base(char const *nbr,
 			char const *base_from, char const *base_to);
 char	*get_next_line(int fd);
-void	gnl_flush(void);
 void	*my_calloc(size_t count, size_t size);
 size_t	my_intlen_base(long long nb, int base_len);
 int		my_getnbr_base(char const *str, char const *base);

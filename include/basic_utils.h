@@ -6,7 +6,7 @@
 /*   By: angsanch <angsanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 18:49:13 by angsanch          #+#    #+#             */
-/*   Updated: 2024/09/02 01:45:16 by angsanch         ###   ########.fr       */
+/*   Updated: 2026/05/04 01:15:55 by angsanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 
 typedef struct file_buffer_t_container
 {
-	char	*buffer;
+	char	buffer[BUFFER_SIZE];
 	size_t	buff_len;
 	char	*line;
 	ssize_t	len;
@@ -54,6 +54,5 @@ typedef struct coolersplit_context
 
 void			*delete_t_splited(t_splited *spl, int delete_result);
 void			copy_without_quotations(char *dst, char const *src, size_t n);
-t_file_buffer	*gnl_buffer_holder(void);
 
 #endif
